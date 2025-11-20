@@ -1,7 +1,7 @@
 {
   "name": "Customizable Keyboard",
   "author": "KeeGooRoomiE",
-  "version": "v1.0.2",
+  "version": "v1.0.3",
   "description": "Keyboard theme with configurable rounding and palette via CSS variables.",
   "target": "Other",
   "manifest_version": 8,
@@ -9,7 +9,7 @@
     "keyboard.css": ["bigpicture", "QuickAccess", "MainMenu"]
   },
   "patches": {
-    "Color Themes": {
+    "Themes": {
       "default": "Steam Default",
       "type": "dropdown",
       "values": {
@@ -25,7 +25,7 @@
           "--sdkb-accent": ["#00bfa5", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"]
         },
-        "Steam Deck White": {
+        "White": {
           "--sdkb-bg-color": ["#e8eaed", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-bg": ["#f3f4f5", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-bg-hover": ["#e1e3e6", "bigpicture", "QuickAccess", "MainMenu"],
@@ -35,18 +35,6 @@
           "--sdkb-key-text-color": ["#16181a", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-text-secondary": ["#5f6062", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent": ["#00b8ff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"]
-        },
-        "iOS Light": {
-          "--sdkb-bg-color": ["#f5f5f7", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-hover": ["#f0f0f3", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-pressed": ["#e6e6ea", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color": ["#d3d3d8", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color-active": ["#c2c2c7", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-color": ["#1a1a1c", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-secondary": ["#8e8e93", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent": ["#007aff", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "One Dark Style": {
@@ -61,18 +49,6 @@
           "--sdkb-accent": ["#61afef", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"]
         },
-        "Safety Core": {
-          "--sdkb-bg-color": ["#151515", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg": ["#f5f5f5", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-hover": ["#f0f0f0", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-pressed": ["#e5e5e5", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color": ["#c2c2c2", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color-active": ["#ff9f3c", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-color": ["#151515", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-secondary": ["#666666", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent": ["#ff7a1a", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#1a1a1a", "bigpicture", "QuickAccess", "MainMenu"]
-        },
         "Marshmallow": {
           "--sdkb-bg-color": ["#fef7ff", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-bg": ["#ffeefa", "bigpicture", "QuickAccess", "MainMenu"],
@@ -84,26 +60,103 @@
           "--sdkb-key-text-secondary": ["#9b7fae", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent": ["#ffb3c6", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#3d2430", "bigpicture", "QuickAccess", "MainMenu"]
-        }
-      }
-    },
-    "Key Rounding": {
-      "default": "Soft",
-      "type": "dropdown",
-      "values": {
-        "Square": {
-          "--sdkb-key-radius": ["0px", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius-special": ["0px", "bigpicture", "QuickAccess", "MainMenu"]
         },
-        "Soft": {
-          "--sdkb-key-radius": ["10px", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius-special": ["14px", "bigpicture", "QuickAccess", "MainMenu"]
+        "Custom": {}
+      },
+      "components": [
+        {
+          "type": "header",
+          "name": "Keyboard Colors"
         },
-        "Pill": {
-          "--sdkb-key-radius": ["20px", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius-special": ["24px", "bigpicture", "QuickAccess", "MainMenu"]
+        {
+          "name": "Keyboard Background",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#101015",
+          "css_variable": "sdkb-bg-color",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "name": "Key Base Color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#1a1b22",
+          "css_variable": "sdkb-key-bg",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "name": "Key Hover Color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#242633",
+          "css_variable": "sdkb-key-bg-hover",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "name": "Key Pressed Color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#2f3242",
+          "css_variable": "sdkb-key-bg-pressed",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "name": "Key Border Color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#2b2d3a",
+          "css_variable": "sdkb-key-border-color",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "name": "Key Active Border",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#3c3f52",
+          "css_variable": "sdkb-key-border-color-active",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "type": "header",
+          "name": "Text Colors"
+        },
+        {
+          "name": "Key Text Color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#f5f5f7",
+          "css_variable": "sdkb-key-text-color",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "name": "Hint Text Color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#a0a3b5",
+          "css_variable": "sdkb-key-text-secondary",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "type": "header",
+          "name": "Accent Colors"
+        },
+        {
+          "name": "Accent Fill",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#00bfa5",
+          "css_variable": "sdkb-accent",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
+        },
+        {
+          "name": "Accent Text Color",
+          "type": "color-picker",
+          "on": "Custom",
+          "default": "#0b1015",
+          "css_variable": "sdkb-accent-text",
+          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         }
-      }
+      ]
     }
   }
 }
