@@ -1,0 +1,19 @@
+:root {
+  --sdkb-bg-color: #0a0c0f;
+
+  --sdkb-key-bg: #16191f;
+  --sdkb-key-bg-hover: #1d2129;
+  --sdkb-key-bg-pressed: #242932;
+
+  --sdkb-key-border-color: #22252c;
+  --sdkb-key-border-color-active: #2c313a;
+
+  --sdkb-key-text-color: #e3faff;
+  --sdkb-key-text-secondary: #8daeb8;
+
+  --sdkb-accent: #00e5ff;
+  --sdkb-accent-text: #001216;
+
+  --sdkb-key-radius: 10px;
+  --sdkb-key-radius-special: 14px;
+}
