@@ -1,0 +1,12 @@
+# macOS trash
+.DS_Store
+
+# Linux/Steam Deck trash
+*.swp
+*.swo
+
+# VSCode settings (optional)
+.vscode/
+
+# Node stuff (если когда-то добавишь tooling)
+node_modules/
