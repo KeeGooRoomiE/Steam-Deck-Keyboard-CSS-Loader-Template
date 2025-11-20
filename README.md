@@ -3,6 +3,8 @@ A clean, modern, fully‑customizable keyboard theme for the Steam Deck.
 
 This project gives you a simple, structured way to restyle the on‑screen keyboard using CSS Loader. Rounded keys, new palettes, accent colors — everything is controlled through variables and built‑in UI controls.
 
+![Small Preview](./preview_small.png)
+
 ---
 
 ## ✨ What’s included
