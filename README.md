@@ -30,6 +30,8 @@ Copy this folder to your Deck and the theme appears in CSS Loader immediately.
    cd ~/homebrew
    git clone https://github.com/KeeGooRoomiE/Steam-Deck-Keyboard-CSS-Loader-Template.git
    ```
+1.5. You can also simply drag the entire **Customizable Keyboard** folder into  
+   `~/homebrew/themes/` using Decky's File Browser — this works the same as copying.
 2. Copy the theme:
    ```bash
    cp -r "~/homebrew/Steam-Deck-Keyboard-CSS-Loader-Template/Customizable Keyboard" \
