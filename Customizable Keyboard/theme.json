@@ -2,7 +2,7 @@
   "name": "Customizable Keyboard",
   "author": "KeeGooRoomiE",
   "version": "v1.0.4",
-  "description": "Keyboard theme with configurable palette via CSS variables.",
+  "description": "Multi preset Steam Deck keyboard theme with clean styling and a fully customizable color mode.",
   "target": "Other",
   "manifest_version": 8,
   "inject": {
@@ -90,7 +90,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Base Color",
+          "name": "Key Color",
           "type": "color-picker",
           "on": "Custom",
           "default": "#1a1b22",
@@ -98,7 +98,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Hover Color",
+          "name": "Key Hover",
           "type": "color-picker",
           "on": "Custom",
           "default": "#242633",
@@ -106,7 +106,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Pressed Color",
+          "name": "Key Pressed",
           "type": "color-picker",
           "on": "Custom",
           "default": "#2f3242",
@@ -114,7 +114,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Border Color",
+          "name": "Key Border",
           "type": "color-picker",
           "on": "Custom",
           "default": "#2b2d3a",
@@ -122,7 +122,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Active Border",
+          "name": "Active Border",
           "type": "color-picker",
           "on": "Custom",
           "default": "#3c3f52",
@@ -130,7 +130,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Text Color",
+          "name": "Key Text",
           "type": "color-picker",
           "on": "Custom",
           "default": "#f5f5f7",
@@ -138,7 +138,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Hint Text Color",
+          "name": "Hint Text",
           "type": "color-picker",
           "on": "Custom",
           "default": "#a0a3b5",
@@ -146,7 +146,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Accent Fill",
+          "name": "Accent Color",
           "type": "color-picker",
           "on": "Custom",
           "default": "#00bfa5",
@@ -154,7 +154,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Accent Text Color",
+          "name": "Accent Text",
           "type": "color-picker",
           "on": "Custom",
           "default": "#0b1015",
