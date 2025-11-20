@@ -97,10 +97,11 @@
 }
 
 /* =====================================================
- * Apply rounding to real keyboard keys
+ * Apply rounding to actual key hit areas
  * ===================================================== */
 
-.Spectrum [class^="virtualkeyboard_KeyboardKey_"],
-.Spectrum [class*="virtualkeyboard_KeyboardKey_"] {
-  border-radius: var(--sdkb-key-radius);
+[class^="virtualkeyboard_KeyboardKeyHitArea_"],
+[class*="virtualkeyboard_KeyboardKeyHitArea_"] {
+  border-radius: var(--sdkb-key-radius) !important;
+  overflow: hidden;
 }

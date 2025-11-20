@@ -13,7 +13,7 @@
       "default": "Steam Default",
       "type": "dropdown",
       "values": {
-        "Steam Default": {
+        "Default": {
           "--sdkb-bg-color": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-bg": ["#1a1b22", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-bg-hover": ["#242633", "bigpicture", "QuickAccess", "MainMenu"],
@@ -23,7 +23,8 @@
           "--sdkb-key-text-color": ["#f5f5f7", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-text-secondary": ["#a0a3b5", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent": ["#00bfa5", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["6px", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "White": {
           "--sdkb-bg-color": ["#e8eaed", "bigpicture", "QuickAccess", "MainMenu"],
@@ -35,7 +36,21 @@
           "--sdkb-key-text-color": ["#16181a", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-text-secondary": ["#5f6062", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent": ["#00b8ff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-accent-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["6px", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "OLED Dark": {
+          "--sdkb-bg-color": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#2a2b30", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color-active": ["#3a3d45", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#d0d0d0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#7f828a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#00b8ff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["6px", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "One Dark Style": {
           "--sdkb-bg-color": ["#1e2127", "bigpicture", "QuickAccess", "MainMenu"],
@@ -47,7 +62,8 @@
           "--sdkb-key-text-color": ["#abb2bf", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-text-secondary": ["#5c6370", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent": ["#61afef", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["4px", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "Marshmallow": {
           "--sdkb-bg-color": ["#fef7ff", "bigpicture", "QuickAccess", "MainMenu"],
@@ -59,15 +75,12 @@
           "--sdkb-key-text-color": ["#4a3b5a", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-text-secondary": ["#9b7fae", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent": ["#ffb3c6", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#3d2430", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-accent-text": ["#3d2430", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["16px", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "Custom": {}
       },
       "components": [
-        {
-          "type": "header",
-          "name": "Keyboard Colors"
-        },
         {
           "name": "Keyboard Background",
           "type": "color-picker",
@@ -117,10 +130,6 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "type": "header",
-          "name": "Text Colors"
-        },
-        {
           "name": "Key Text Color",
           "type": "color-picker",
           "on": "Custom",
@@ -135,10 +144,6 @@
           "default": "#a0a3b5",
           "css_variable": "sdkb-key-text-secondary",
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
-        },
-        {
-          "type": "header",
-          "name": "Accent Colors"
         },
         {
           "name": "Accent Fill",
