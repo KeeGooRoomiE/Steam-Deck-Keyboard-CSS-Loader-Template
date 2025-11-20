@@ -1,8 +1,8 @@
 {
   "name": "Customizable Keyboard",
   "author": "KeeGooRoomiE",
-  "version": "v1.0.3",
-  "description": "Keyboard theme with configurable rounding and palette via CSS variables.",
+  "version": "v1.0.4",
+  "description": "Keyboard theme with configurable palette via CSS variables.",
   "target": "Other",
   "manifest_version": 8,
   "inject": {
@@ -10,7 +10,7 @@
   },
   "patches": {
     "Themes": {
-      "default": "Steam Default",
+      "default": "Default",
       "type": "dropdown",
       "values": {
         "Default": {
