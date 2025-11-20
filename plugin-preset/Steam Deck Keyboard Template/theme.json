@@ -1,0 +1,11 @@
+{
+  "name": "Steam Deck Keyboard Template",
+  "author": "KeeGooRoomiE",
+  "version": "v1.0.0",
+  "description": "Base keyboard theme with configurable rounding and palette via CSS variables.",
+  "target": "Other",
+  "manifest_version": 8,
+  "inject": {
+    "keyboard.css": ["bigpicture", "QuickAccess", "MainMenu"]
+  }
+}
