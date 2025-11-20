@@ -1,7 +1,5 @@
-
-
 /* =====================================================
- * Steam Deck Keyboard CSS Loader Template
+ * Steam Deck Customizable Keyboard
  *
  * Main base stylesheet. The idea:
  * - Keep layout close to default
@@ -50,7 +48,7 @@
 
 .GamepadUI .VirtualKeyboardRoot,
 .gamepadui_virtualkeyboard_Keyboard {
-  background: radial-gradient(circle at top, #191a22 0, #07070a 55%, #050509 100%);
+  background-color: var(--sdkb-bg-color);
   color: var(--sdkb-key-text-color);
 }
 

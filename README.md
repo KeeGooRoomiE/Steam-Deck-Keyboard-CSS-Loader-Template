@@ -1,118 +1,178 @@
-# Steam-Deck-Keyboard-CSS-Loader-Template
-Your Steam Deck keyboard, but actually customizable. Fork it, recolor it, reshape it.
+# Steam Deck Customizable Keyboard
+A clean, fork‑friendly, fully customizable keyboard theme for the Steam Deck.
 
-# Steam Deck Keyboard CSS Loader Template
-
-Your Steam Deck keyboard, but actually customizable. Fork it, recolor it, reshape it.
-
-Minimal CSS template for styling the Steam Deck on-screen keyboard via CSS Loader (or similar tools).
-The layout stays close to default – you only tweak colors, rounding and a few spacing/shadow settings.
+Shape it, recolor it, tweak it — this project gives you a structured, modern way to style the on‑screen keyboard using CSS Loader. No hunting through messy CSS, no guessing selectors. Everything is exposed, everything is clear.
 
 ---
 
-## What this is
+## ✨ What this project is
 
-- A small, readable CSS file (`keyboard.css`).
-- All important settings are exposed as CSS variables in the `:root` block.
-- Designed to be forked and turned into your own theme in a couple of minutes.
+This repo contains **three** main parts:
 
-You don’t have to dig through a huge stylesheet – just change the variables and, if needed, map the styles to your own keyboard selectors.
+### **1. The actual CSS theme**
+Located in:
+```
+Steam Deck Keyboard Template/
+```
+This is the complete CSS Loader‑ready theme:
+- `keyboard.css` — all keyboard styling
+- `theme.json` — manifest with UI controls (color pickers, rounding presets)
+- `README.md` — info for the plugin folder
 
----
-
-## Files
-
-- `keyboard.css` – base theme for the Steam Deck keyboard.
-- `LICENSE` – MIT license.
-- `README.md` – this file.
-
-You can also add a `screenshots/` folder with previews of your theme.
+This folder can be copied **directly to the Steam Deck** and will appear as a full theme in CSS Loader.
 
 ---
 
-## Usage
+### **2. Presets (optional theme variants)**
+Located in:
+```
+presets/
+```
+Each file contains a `:root { ... }` block with alternative color/rounding palettes:
+- iOS‑style
+- Neon
+- White Deck
+- Hacker Green
 
-1. Open `keyboard.css` in this repo.
-2. Copy its contents into your Steam Deck CSS loader (for example, CSS Loader plugin).
-3. Apply or reload the style.
-4. If your keyboard uses different selectors, map the styles from the `.sdkb-*` classes to your real DOM classes.
-
-> **Note:** The `.sdkb-*` classes are just clean, human-readable placeholders. You can either keep them (if your setup allows) or copy the styles into the real Steam keyboard selectors.
+You can manually replace your variables in `keyboard.css` with any preset.
 
 ---
 
-## Customization
+### **3. Repo screenshots (optional)**
+```
+repo-screens/
+```
+Used only for GitHub visuals. These files are **not loaded** on the Deck.
 
-All the core values are defined at the top of `keyboard.css`:
+---
+
+## 🧩 How the theme works
+
+All appearance parameters are exposed as CSS variables inside `keyboard.css`:
 
 ```css
 :root {
   --sdkb-bg-color: #101015;
-
   --sdkb-key-bg: #1a1b22;
   --sdkb-key-bg-hover: #242633;
   --sdkb-key-bg-pressed: #2f3242;
-
   --sdkb-key-border-color: #2b2d3a;
   --sdkb-key-border-color-active: #3c3f52;
-
   --sdkb-key-text-color: #f5f5f7;
   --sdkb-key-text-secondary: #a0a3b5;
-
   --sdkb-accent: #00bfa5;
   --sdkb-accent-text: #0b1015;
-
   --sdkb-key-radius: 10px;
   --sdkb-key-radius-special: 14px;
 }
 ```
 
-Change these to get a different look:
+These variables control **all** important visual elements:
+- background
+- key colors
+- text colors
+- accent keys
+- rounding
+- spacing & shadows
 
-- **Background & keys** – main keyboard background and key colors.
-- **Text & secondary text** – primary labels and small hints.
-- **Accent** – color for special keys (e.g. Enter, active layout).
-- **Radius** – how round your keys look.
-
-### Quick styling ideas
-
-- **iOS-like**
-  - Light background.
-  - Dark text.
-  - Higher radius (12–16px) for a softer look.
-
-- **White Steam Deck vibe**
-  - Neutral light background.
-  - Keys slightly darker than the background.
-  - Strong accent color for active keys.
+You can edit these manually **or use the built‑in CSS Loader controls** (see below).
 
 ---
 
-## Mapping to real selectors
+## 📦 Installing the theme on Steam Deck
 
-If you want to bind the styles directly to the real Steam Deck keyboard elements, you can:
+### **Option A — simplest (copy the plugin folder)**
 
-- Inspect the keyboard in a browser / devtools (through CSS Loader tools).
-- Find the actual class names used for keys and rows.
-- Copy styles from `.sdkb-key`, `.sdkb-key--special`, `.sdkb-key--accent`, etc., into those selectors.
+1. Download or clone this repo on your Steam Deck:
+   ```bash
+   cd ~/homebrew
+   git clone https://github.com/KeeGooRoomiE/Steam-Deck-Keyboard-CSS-Loader-Template.git
+   ```
 
-This template doesn’t force a specific DOM structure – it just gives you a clean base.
+2. Copy the theme folder:
+   ```bash
+   cp -r "~/homebrew/Steam-Deck-Keyboard-CSS-Loader-Template/Steam Deck Keyboard Template" \
+         "~/homebrew/themes/"
+   ```
+
+3. Open **Decky Loader → CSS Loader → Manage Themes**.
+4. Enable **Steam Deck Customizable Keyboard**.
+5. Hit **Refresh Themes** if needed.
+
+Done — your keyboard now uses the theme.
 
 ---
 
-## Forking / creating your own theme
+### **Option B — manual file copy (FileZilla, SFTP, Decky File Server)**
 
-1. Click **Fork** on GitHub.
-2. Edit the `:root` block in `keyboard.css` to set your colors, radius and spacing.
-3. Optionally, update selectors to match your exact keyboard.
-4. Add screenshots and rename the project to match your theme.
-
-That’s it – you now have your own Steam Deck keyboard theme repo.
+1. Open your Deck’s filesystem.
+2. Navigate to:
+   ```
+   /home/deck/homebrew/themes/
+   ```
+3. Drop the entire folder:
+   ```
+   Steam Deck Keyboard Template/
+   ```
+4. Enable it in CSS Loader.
 
 ---
 
-## License
+## 🎛️ Built‑in Customization via CSS Loader UI
 
-This project is released under the [MIT License](./LICENSE).
+This theme supports **live customization** thanks to the `patches` section in `theme.json`.
 
-You’re free to use it in personal projects, share it, fork it, and ship your own themes based on it.
+You get:
+
+### **Color pickers for:**
+- background
+- key background
+- hover
+- pressed
+- border
+- active border
+- text
+- secondary text
+- accent
+- accent text
+
+### **Dropdown presets for key rounding:**
+- Square
+- Soft
+- Pill
+
+No need to edit CSS manually unless you want to.
+
+---
+
+## 🧪 Using presets manually
+
+If you prefer to load a preset instead of tweaking controls:
+1. Open any file in `presets/`.
+2. Copy the entire `:root { ... }` block.
+3. Replace the one in `keyboard.css`.
+4. Save & Refresh in CSS Loader.
+
+Presets are just color/rounding presets — nothing more.
+
+---
+
+## 🤓 For developers / modders
+
+### DOM mapping
+The theme uses `.sdkb-*` classes internally (for clarity).  
+If your Deck environment uses different selectors, simply map styles from:
+- `.sdkb-key`
+- `.sdkb-key--special`
+- `.sdkb-key--accent`
+- `.sdkb-key__hint`
+
+…to the real keyboard DOM.
+
+Steam’s keyboard layout may update in future UI revisions — keeping the theme modular makes it easy to maintain.
+
+---
+
+## 📄 License
+This project is released under the **MIT License**.
+Use it, fork it, remix it, build your own themes on top — it’s yours.
