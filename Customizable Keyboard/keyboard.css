@@ -28,19 +28,9 @@
   /* ===== Shape / spacing ===== */
   --sdkb-key-radius: 10px;
   --sdkb-key-radius-special: 14px;
-  --sdkb-key-gap: 6px;
-  --sdkb-row-gap: 8px;
-
-  /* ===== Shadows / depth ===== */
-  --sdkb-key-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
-  --sdkb-key-shadow-pressed: 0 1px 2px rgba(0, 0, 0, 0.6);
-
-  /* ===== Typography ===== */
-  --sdkb-key-font-size: 14px;
-  --sdkb-key-font-size-small: 11px;
 }
 
-/* =====================================================
+ /* =====================================================
  * Map high-level sdkb variables to Steam's DefaultTheme
  * ===================================================== */
 
@@ -104,4 +94,13 @@
   --key-deadkey-background-color: var(--sdkb-key-bg-hover);
   --key-deadkeyinactive-color: var(--sdkb-key-text-secondary);
   --key-deadkeyactive-color: var(--sdkb-key-text-color);
+}
+
+/* =====================================================
+ * Apply rounding to real keyboard keys
+ * ===================================================== */
+
+.Spectrum [class^="virtualkeyboard_KeyboardKey_"],
+.Spectrum [class*="virtualkeyboard_KeyboardKey_"] {
+  border-radius: var(--sdkb-key-radius);
 }
