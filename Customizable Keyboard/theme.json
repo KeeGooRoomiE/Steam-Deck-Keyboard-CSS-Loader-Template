@@ -1,7 +1,7 @@
 {
-  "name": "Steam Deck Customizable Keyboard",
+  "name": "Customizable Keyboard",
   "author": "KeeGooRoomiE",
-  "version": "v1.0.1",
+  "version": "v1.0.2",
   "description": "Keyboard theme with configurable rounding and palette via CSS variables.",
   "target": "Other",
   "manifest_version": 8,

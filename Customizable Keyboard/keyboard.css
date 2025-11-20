@@ -41,122 +41,67 @@
 }
 
 /* =====================================================
- * Keyboard background
- * NOTE: Adjust these selectors to match your environment
- * if needed. These are common for Steam Deck UI.
+ * Map high-level sdkb variables to Steam's DefaultTheme
  * ===================================================== */
 
-.GamepadUI .VirtualKeyboardRoot,
-.gamepadui_virtualkeyboard_Keyboard {
-  background-color: var(--sdkb-bg-color);
-  color: var(--sdkb-key-text-color);
+.DefaultTheme {
+  /* Overall keyboard background */
+  --background-color: var(--sdkb-bg-color);
+
+  /* Base key colors */
+  --key-background-color: var(--sdkb-key-bg);
+  --key-focused-background-color: var(--sdkb-key-bg-hover);
+
+  --key-color: var(--sdkb-key-text-color);
+  --key-focused-color: var(--sdkb-key-text-color);
+
+  /* Function / special keys mapped to accent */
+  --key-meta-background-color: var(--sdkb-accent);
+  --key-meta-color: var(--sdkb-accent-text);
+
+  --key-tab-background-color: var(--sdkb-accent);
+  --key-tab-color: var(--sdkb-accent-text);
+
+  --key-caps-background-color: var(--sdkb-accent);
+  --key-caps-color: var(--sdkb-accent-text);
+
+  --key-shift-background-color: var(--sdkb-accent);
+  --key-shift-color: var(--sdkb-accent-text);
+  --key-shift-label-color: var(--sdkb-accent-text);
+  --key-focused-shift-label-color: var(--sdkb-accent-text);
+
+  --key-enter-background-color: var(--sdkb-accent);
+  --key-enter-color: var(--sdkb-accent-text);
+  --key-enter-action-button-glyph-color: var(--sdkb-accent-text);
+
+  --key-backspace-background-color: var(--sdkb-accent);
+  --key-backspace-color: var(--sdkb-accent-text);
+
+  --key-spacebar-background-color: var(--sdkb-key-bg);
+  --key-spacebar-color: var(--sdkb-key-text-color);
+
+  /* Extended keys / emoji / toggles use accent+bg */
+  --key-extendedkey-background-color: var(--sdkb-key-bg-hover);
+  --key-extendedkey-color: var(--sdkb-key-text-color);
+  --key-extendedkey-focused-background-color: var(--sdkb-accent);
+  --key-extendedkey-focused-color: var(--sdkb-accent-text);
+  --key-extendedkey-hover-background-color: var(--sdkb-accent);
+  --key-extendedkey-hover-color: var(--sdkb-accent-text);
+
+  --key-toggleon-background-color: var(--sdkb-accent);
+  --key-toggleon-color: var(--sdkb-accent-text);
+  --key-toggleoneshot-color: var(--sdkb-accent-text);
+
+  --key-emoji-category-highlight-background-color: var(--sdkb-accent);
+  --key-emoji-focused-background-color: var(--sdkb-key-bg-hover);
+
+  --key-touched-background-color: var(--sdkb-key-bg-hover);
+  --key-touched-color: var(--sdkb-key-text-color);
+
+  --key-pointer-background-color: var(--sdkb-accent);
+  --key-pointer-stroke-color: var(--sdkb-accent-text);
+
+  --key-deadkey-background-color: var(--sdkb-key-bg-hover);
+  --key-deadkeyinactive-color: var(--sdkb-key-text-secondary);
+  --key-deadkeyactive-color: var(--sdkb-key-text-color);
 }
-
-/* Optional row helper – you can use it in your own markup
- * or ignore it if you rely on the default DOM.
- */
-.sdkb-row {
-  display: flex;
-  gap: var(--sdkb-key-gap);
-  margin-bottom: var(--sdkb-row-gap);
-}
-
-/* =====================================================
- * Base key style
- * Map this class (or the styles) to the real key selector
- * used by the Steam Deck keyboard DOM.
- * ===================================================== */
-
-.sdkb-key {
-  position: relative;
-  min-width: 40px;
-  padding: 8px 10px;
-
-  border-radius: var(--sdkb-key-radius);
-  background: var(--sdkb-key-bg);
-  border: 1px solid var(--sdkb-key-border-color);
-  box-shadow: var(--sdkb-key-shadow);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: var(--sdkb-key-font-size);
-  color: var(--sdkb-key-text-color);
-
-  transition:
-    background 120ms ease-out,
-    box-shadow 120ms ease-out,
-    transform 80ms ease-out,
-    border-color 120ms ease-out;
-}
-
-/* Hover state */
-.sdkb-key:hover {
-  background: var(--sdkb-key-bg-hover);
-  border-color: var(--sdkb-key-border-color-active);
-}
-
-/* Pressed / active state */
-.sdkb-key:active,
-.sdkb-key.is-pressed {
-  background: var(--sdkb-key-bg-pressed);
-  transform: translateY(1px);
-  box-shadow: var(--sdkb-key-shadow-pressed);
-}
-
-/* =====================================================
- * Special keys (Shift, Enter, Space, etc.)
- * ===================================================== */
-
-.sdkb-key--special {
-  border-radius: var(--sdkb-key-radius-special);
-  background: linear-gradient(135deg, #171924, #141620);
-}
-
-/* Accent keys (e.g., Enter, active layout) */
-.sdkb-key--accent {
-  background: var(--sdkb-accent);
-  color: var(--sdkb-accent-text);
-  border-color: rgba(0, 0, 0, 0.4);
-}
-
-.sdkb-key--accent:hover {
-  filter: brightness(1.06);
-}
-
-.sdkb-key--accent:active,
-.sdkb-key--accent.is-pressed {
-  filter: brightness(0.98);
-}
-
-/* =====================================================
- * Small hints / secondary labels
- * ===================================================== */
-
-.sdkb-key__hint {
-  position: absolute;
-  top: 3px;
-  right: 5px;
-  font-size: var(--sdkb-key-font-size-small);
-  color: var(--sdkb-key-text-secondary);
-  opacity: 0.8;
-}
-
-/* =====================================================
- * Mapping to real selectors (optional)
- *
- * If you know the actual Steam Deck keyboard selectors,
- * you can either:
- *  - replace `.sdkb-key` with them, or
- *  - copy the styles into the real selectors below.
- *
- * Example (pseudo-code):
- *
- *   .gamepadui_virtualkeyboard_Key {
- *     // paste styles from .sdkb-key here
- *   }
- *
- * This file intentionally does NOT hard-code those
- * selectors, so the template stays flexible.
- * ===================================================== */
