@@ -1,49 +1,49 @@
-# Steam Deck Customizable Keyboard
-A clean, modern, fully‑customizable keyboard theme for the Steam Deck.
+# 🎮 Steam Deck Customizable Keyboard
 
-This project gives you a simple, structured way to restyle the on‑screen keyboard using CSS Loader. Rounded keys, new palettes, accent colors — everything is controlled through variables and built‑in UI controls.
+> Your Steam Deck keyboard. But actually yours.
 
-![Small Preview](https://github.com/KeeGooRoomiE/Steam-Deck-Keyboard-CSS-Loader-Template/blob/main/small_preview.png)
+A CSS Loader plugin for restyle the Steam Deck on-screen keyboard — colors, key rounding, accents.
+Built as a template: fork it, change variables, ship your own theme in minutes.
 
----
+**16,000+ installs · 59 ⭐ on [DeckThemes](https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f)**
 
-## ✨ What’s included
-
-### **Customizable Keyboard Theme**
-Located in the folder:
-```
-Customizable Keyboard/
-```
-Inside is the complete plugin:
-- `keyboard.css` — the stylesheet
-- `theme.json` — manifest with color pickers and rounding presets
-
-Copy this folder to your Deck and the theme appears in CSS Loader immediately.
+![Preview](small_preview.png)
 
 ---
 
-## 📦 Installing on Steam Deck
+## ✨ Features
 
-### **Quick install**
-1. Clone or download the repo on your Deck:
-   ```bash
-   cd ~/homebrew
-   git clone https://github.com/KeeGooRoomiE/Steam-Deck-Keyboard-CSS-Loader-Template.git
-   ```
- You can also simply drag the entire **Customizable Keyboard** folder into  
-   `~/homebrew/themes/` using Decky's File Browser — this works the same as copying.
-2. Copy the theme:
-   ```bash
-   cp -r "~/homebrew/Steam-Deck-Keyboard-CSS-Loader-Template/Customizable Keyboard" \
-         "~/homebrew/themes/"
-   ```
-3. Open **Decky → CSS Loader → Manage Themes**
-4. Enable **Customizable Keyboard**
-5. Press **Refresh Themes** if needed
+- 🎨 Color pickers in CSS Loader UI — no code editing needed
+- 🔲 Key rounding presets (sharp / soft / pill)
+- 🧱 CSS variable architecture — structured and easy to fork
+- 📦 Drop-in install via Decky
 
-Done.
+---
+
+## 📦 Installation
+
+**Option A — Git**
+```bash
+cd ~/homebrew/themes
+git clone https://github.com/KeeGooRoomiE/Steam-Deck-Keyboard-CSS-Loader-Template.git "Customizable Keyboard"
+```
+
+**Option B — Manual**  
+Download → drag `Customizable Keyboard/` into `~/homebrew/themes/`
+
+Then: **Decky → CSS Loader → Manage Themes → Enable "Customizable Keyboard"**
+
+---
+
+## 🍴 Make your own theme
+
+1. Fork this repo
+2. Edit CSS variables at the top of `keyboard.css`
+3. Update name in `theme.json`
+4. Drop in `~/homebrew/themes/` — done
 
 ---
 
 ## 📄 License
-MIT — do whatever you want with it.
+
+MIT — fork it, remix it, ship it.
