@@ -51,6 +51,8 @@
 
   /* Resting-key box-shadow — flat glow, inset bevel, whatever. Full value. */
   --sdkb-glow: none;
+  /* Focused-key box-shadow. Defaults to the resting glow. */
+  --sdkb-focus-shadow: var(--sdkb-glow);
   /* Optional per-key background-image (a gradient, etc.), layered over
    * --sdkb-key-bg (background-color can't hold a gradient). */
   --sdkb-key-gradient: none;
@@ -146,7 +148,7 @@
   border-radius: calc(var(--sdkb-key-radius, 10) * 1px) !important;
   border: calc(var(--sdkb-key-border-width, 0) * 1px) solid
           var(--sdkb-key-border-color, transparent) !important;
-  box-shadow: var(--sdkb-glow, none) !important;
+  box-shadow: var(--sdkb-glow) !important;
   background-image: var(--sdkb-key-gradient, none) !important;
   box-sizing: border-box !important;
   transition: background-color var(--sdkb-transition, 120ms) ease,
@@ -174,7 +176,7 @@
  * Steam sets its background via --key-focused-background-color; this
  * adds an optional outer glow via --sdkb-focus-shadow. */
 .DefaultTheme [class*="KeyTheme_"][class*="_21EoN"] {
-  box-shadow: var(--sdkb-focus-shadow, var(--sdkb-glow, none)) !important;
+  box-shadow: var(--sdkb-focus-shadow) !important;
 }
 
 /* =====================================================

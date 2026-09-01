@@ -2,8 +2,8 @@
   "name": "Customizable Keyboard",
   "author": "KeeGooRoomiE",
   "version": "v2.0.0",
-  "description": "Steam Deck keyboard: 10 Steam Points Shop keyboards as colour presets (Spectrum, Cerulean, Digital, Seafoam, Totally Tubular, Grape, Ruby, Pumpkin, OLED, Limited Edition White) + One Dark, OLED Black, and a fully custom colour mode. Palettes sampled from the official Points Shop art.",
-  "target": "Other",
+  "description": "13 hand-tuned presets for the Steam Deck on-screen keyboard, including every Steam Points Shop keyboard (Steam Green, Spectrum, Cerulean, Digital, Seafoam, Candy Coded, Grape, Ruby, Pumpkin, OLED, Limited Edition White) plus One Dark Style, OLED Black and a fully custom colour mode. Each preset carries its own radius, glow and function-key style.",
+  "target": "Keyboard",
   "manifest_version": 8,
   "inject": {
     "keyboard.css": ["bigpicture", "QuickAccess", "MainMenu"]
