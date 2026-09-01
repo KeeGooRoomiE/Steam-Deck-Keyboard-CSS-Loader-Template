@@ -50,7 +50,7 @@
   --sdkb-transition: 120ms;
 
   /* Resting-key box-shadow — flat glow, inset bevel, whatever. Full value. */
-  --sdkb-glow: none;
+  --sdkb-glow: 0 0 transparent;
   /* Focused-key box-shadow. Defaults to the resting glow. */
   --sdkb-focus-shadow: var(--sdkb-glow);
   /* Optional per-key background-image (a gradient, etc.), layered over

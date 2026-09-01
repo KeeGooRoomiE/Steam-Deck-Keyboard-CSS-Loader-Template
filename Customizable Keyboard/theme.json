@@ -89,7 +89,7 @@
           "--sdkb-accent": ["#39ff14", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#001400", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-radius": ["0", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-glow": ["none", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["0 0 transparent", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-press-bg": ["#33ff1e", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-press-text": ["#001400", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(70%) sepia(64%) saturate(1600%) hue-rotate(72deg) brightness(112%) contrast(104%)", "bigpicture", "QuickAccess", "MainMenu"],
@@ -135,7 +135,7 @@
           "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(23%) sepia(11%) saturate(1200%) hue-rotate(182deg) brightness(94%) contrast(89%)", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-press-bg": ["#5fb0b6", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-press-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-press-shadow": ["none", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["0 0 transparent", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-ripple": ["rgba(95,176,182,0.35)", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-spacebar-bg": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-spacebar-text": ["#3a3f4a", "bigpicture", "QuickAccess", "MainMenu"],
@@ -224,7 +224,7 @@
           "--sdkb-util-text": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-press-bg": ["#E65A35", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-press-text": ["#F8FDFD", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-press-shadow": ["none", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["0 0 transparent", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-ripple": ["rgba(255,255,255,0.25)", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-spacebar-bg": ["#B5B5B5", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-spacebar-text": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"]
@@ -240,7 +240,7 @@
           "--sdkb-accent": ["#61afef", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-radius": ["0", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-glow": ["none", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-glow": ["0 0 transparent", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "OLED Black": {
           "--sdkb-bg-color": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
@@ -253,7 +253,7 @@
           "--sdkb-accent": ["#00b8ff", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-radius": ["6", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-glow": ["none", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-glow": ["0 0 transparent", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "Custom": {}
       },
