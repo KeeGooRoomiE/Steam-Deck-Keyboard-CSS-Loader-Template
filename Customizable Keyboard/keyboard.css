@@ -1,107 +1,241 @@
 /* =====================================================
  * Steam Deck Customizable Keyboard
  *
- * Main base stylesheet. The idea:
- * - Keep layout close to default
- * - Expose all important knobs via :root variables
- * - Make it easy to fork and restyle
+ * Restyles the Steam on-screen keyboard via CSS Loader.
+ *
+ * Verified live against the Steam client (Aug 2026 build) —
+ * full DOM/reference in docs/keyboard-anatomy.md
+ *
+ *   container / var host : .DefaultTheme
+ *   every key            : .DefaultTheme [class*="KeyTheme_"]
+ *   key label            : .DefaultTheme [class*="KeyTheme_"] > span
+ *   pressed state        : :active   (there is no :hover)
+ *   focus / touch        : handled by Steam via --key-*-color vars
+ *
+ * Steam exposes colours as CSS variables but NOT radius/border/shadow,
+ * so shape + glow are applied with direct rules on the key element.
  * ===================================================== */
 
 :root {
-  /* ===== Colors ===== */
-  --sdkb-bg-color: #101015;
+  /* ===== Colours ===== */
+  --sdkb-bg-color: #101015;          /* keyboard background            */
 
-  --sdkb-key-bg: #1a1b22;
-  --sdkb-key-bg-hover: #242633;
-  --sdkb-key-bg-pressed: #2f3242;
+  --sdkb-key-bg: #1a1b22;            /* normal key                     */
+  --sdkb-key-bg-hover: #242633;      /* focused key (cursor on it)     */
+  --sdkb-key-bg-pressed: #2f3242;    /* pressed / touched key          */
 
-  --sdkb-key-border-color: #2b2d3a;
-  --sdkb-key-border-color-active: #3c3f52;
+  --sdkb-key-text-color: #f5f5f7;    /* key label                      */
+  --sdkb-key-text-secondary: #a0a3b5;/* hints / dead keys (fork hook)  */
 
-  --sdkb-key-text-color: #f5f5f7;
-  --sdkb-key-text-secondary: #a0a3b5;
-
-  /* Accent (e.g. Enter, active layout) */
+  /* Accent — function keys: Enter, Shift, Tab, Caps, Backspace, toggles */
   --sdkb-accent: #00bfa5;
   --sdkb-accent-text: #0b1015;
 
-  /* ===== Shape / spacing ===== */
-  --sdkb-key-radius: 10px;
-  --sdkb-key-radius-special: 14px;
-}
+  /* Function-key fill. Defaults to the accent; the "Function keys"
+   * control can switch this to a neutral key colour.                  */
+  --sdkb-fn-bg: var(--sdkb-accent);
+  --sdkb-fn-text: var(--sdkb-accent-text);
 
- /* =====================================================
- * Map high-level sdkb variables to Steam's DefaultTheme
- * ===================================================== */
+  /* ===== Shape / spacing =====
+   * Unit-less numbers — px is added in CSS (calc). Each preset sets its
+   * own radius; the Custom-mode controls can override.               */
+  --sdkb-key-radius: 6;              /* key corner radius (0–24)       */
+  --sdkb-key-border-width: 0;        /* 0 = borderless (Steam default) */
+  --sdkb-key-border-color: #3c3f52;  /* only visible when width > 0    */
+  --sdkb-key-gap: 0;                 /* space between keys (0–12)      */
+  /* --sdkb-label-size: unset -> native Steam label size (see rule below) */
 
-.DefaultTheme {
-  /* Overall keyboard background */
-  --background-color: var(--sdkb-bg-color);
+  /* ===== Feedback ===== */
+  --sdkb-press-scale: 0.9;           /* "Press animation" Off sets this to 1 */
+  --sdkb-transition: 120ms;
 
-  /* Base key colors */
-  --key-background-color: var(--sdkb-key-bg);
-  --key-focused-background-color: var(--sdkb-key-bg-hover);
+  /* Resting-key box-shadow — flat glow, inset bevel, whatever. Full value. */
+  --sdkb-glow: none;
+  /* Optional per-key background-image (a gradient, etc.), layered over
+   * --sdkb-key-bg (background-color can't hold a gradient). */
+  --sdkb-key-gradient: none;
 
-  --key-color: var(--sdkb-key-text-color);
-  --key-focused-color: var(--sdkb-key-text-color);
+  /* Utility keys — arrows / Paste / emoji+layout switch / hide-keyboard.
+   * Default to the function-key look; a preset can make them neutral.  */
+  --sdkb-util-bg: var(--sdkb-fn-bg);
+  --sdkb-util-text: var(--sdkb-fn-text);
 
-  /* Function / special keys mapped to accent */
-  --key-meta-background-color: var(--sdkb-accent);
-  --key-meta-color: var(--sdkb-accent-text);
+  /* Pressed / held key. Steam hard-codes its background blue, so we
+   * re-theme it. --sdkb-press-shadow is a full box-shadow value
+   * (halo, inset bevel…); --sdkb-ripple colours the expanding ::after. */
+  --sdkb-press-bg: var(--sdkb-accent);
+  --sdkb-press-text: var(--sdkb-accent-text);
+  --sdkb-press-shadow: 0 0 14px 2px var(--sdkb-accent);
+  --sdkb-ripple: var(--sdkb-accent);
 
-  --key-tab-background-color: var(--sdkb-accent);
-  --key-tab-color: var(--sdkb-accent-text);
+  /* Icon colour:
+   *  - <img> controller glyphs (L2 / X / R2 / L3) -> tinted with a filter
+   *  - inline <svg> on function keys              -> --sdkb-glyph-color
+   *  - inline <svg> on utility keys               -> --sdkb-util-text     */
+  --sdkb-glyph-filter: none;
+  --sdkb-glyph-color: var(--sdkb-fn-text);
 
-  --key-caps-background-color: var(--sdkb-accent);
-  --key-caps-color: var(--sdkb-accent-text);
-
-  --key-shift-background-color: var(--sdkb-accent);
-  --key-shift-color: var(--sdkb-accent-text);
-  --key-shift-label-color: var(--sdkb-accent-text);
-  --key-focused-shift-label-color: var(--sdkb-accent-text);
-
-  --key-enter-background-color: var(--sdkb-accent);
-  --key-enter-color: var(--sdkb-accent-text);
-  --key-enter-action-button-glyph-color: var(--sdkb-accent-text);
-
-  --key-backspace-background-color: var(--sdkb-accent);
-  --key-backspace-color: var(--sdkb-accent-text);
-
-  --key-spacebar-background-color: var(--sdkb-key-bg);
-  --key-spacebar-color: var(--sdkb-key-text-color);
-
-  /* Extended keys / emoji / toggles use accent+bg */
-  --key-extendedkey-background-color: var(--sdkb-key-bg-hover);
-  --key-extendedkey-color: var(--sdkb-key-text-color);
-  --key-extendedkey-focused-background-color: var(--sdkb-accent);
-  --key-extendedkey-focused-color: var(--sdkb-accent-text);
-  --key-extendedkey-hover-background-color: var(--sdkb-accent);
-  --key-extendedkey-hover-color: var(--sdkb-accent-text);
-
-  --key-toggleon-background-color: var(--sdkb-accent);
-  --key-toggleon-color: var(--sdkb-accent-text);
-  --key-toggleoneshot-color: var(--sdkb-accent-text);
-
-  --key-emoji-category-highlight-background-color: var(--sdkb-accent);
-  --key-emoji-focused-background-color: var(--sdkb-key-bg-hover);
-
-  --key-touched-background-color: var(--sdkb-key-bg-hover);
-  --key-touched-color: var(--sdkb-key-text-color);
-
-  --key-pointer-background-color: var(--sdkb-accent);
-  --key-pointer-stroke-color: var(--sdkb-accent-text);
-
-  --key-deadkey-background-color: var(--sdkb-key-bg-hover);
-  --key-deadkeyinactive-color: var(--sdkb-key-text-secondary);
-  --key-deadkeyactive-color: var(--sdkb-key-text-color);
+  /* Panel background. Usually = the keyboard bg. Set it to a gradient
+   * (with transparent keys) to get a Spectrum-style rainbow.          */
+  --sdkb-panel-bg: var(--sdkb-bg-color);
 }
 
 /* =====================================================
- * Apply rounding to actual key hit areas
+ * Map sdkb variables -> Steam's DefaultTheme colour vars.
+ * These are the only colour hooks Steam exposes (all verified live).
  * ===================================================== */
+.DefaultTheme {
+  /* overall background */
+  --background-color: var(--sdkb-bg-color);
 
-[class^="virtualkeyboard_KeyboardKeyHitArea_"],
-[class*="virtualkeyboard_KeyboardKeyHitArea_"] {
-  border-radius: var(--sdkb-key-radius) !important;
-  overflow: hidden;
+  /* base keys */
+  --key-background-color: var(--sdkb-key-bg);
+  --key-focused-background-color: var(--sdkb-key-bg-hover);
+  --key-touched-background-color: var(--sdkb-key-bg-pressed);
+
+  --key-color: var(--sdkb-key-text-color);
+  --key-focused-color: var(--sdkb-key-text-color);
+  --key-touched-color: var(--sdkb-key-text-color);
+
+  /* function / special keys -> --sdkb-fn-* (accent by default) */
+  --key-meta-background-color: var(--sdkb-fn-bg);
+  --key-meta-color: var(--sdkb-fn-text);
+
+  --key-tab-background-color: var(--sdkb-fn-bg);
+  --key-tab-color: var(--sdkb-fn-text);
+
+  --key-caps-background-color: var(--sdkb-fn-bg);
+  --key-caps-color: var(--sdkb-fn-text);
+
+  --key-shift-background-color: var(--sdkb-fn-bg);
+  --key-shift-color: var(--sdkb-fn-text);
+
+  --key-enter-background-color: var(--sdkb-fn-bg);
+  --key-enter-color: var(--sdkb-fn-text);
+
+  --key-backspace-background-color: var(--sdkb-fn-bg);
+  --key-backspace-color: var(--sdkb-fn-text);
+
+  --key-toggleon-background-color: var(--sdkb-accent);
+  --key-toggleon-color: var(--sdkb-accent-text);
+
+  /* the small "shifted" hint char on every key (the `!` above `1`, etc.) */
+  --key-shift-label-color: var(--sdkb-key-text-secondary);
+  --key-focused-shift-label-color: var(--sdkb-key-text-secondary);
+
+  /* spacebar — defaults to a normal key; a preset can make it a fn key */
+  --key-spacebar-background-color: var(--sdkb-spacebar-bg, var(--sdkb-key-bg));
+  --key-spacebar-color: var(--sdkb-spacebar-text, var(--sdkb-key-text-color));
+
+  /* extended (long-press) popup keys */
+  --key-extendedkey-background-color: var(--sdkb-key-bg-hover);
+  --key-extendedkey-color: var(--sdkb-key-text-color);
+  /* (utility keys — arrows / Paste / emoji+layout switch / hide-keyboard —
+   *  are re-coloured by a rule below, not via a Steam var) */
+  --key-extendedkey-focused-background-color: var(--sdkb-accent);
+  --key-extendedkey-focused-color: var(--sdkb-accent-text);
+}
+
+/* =====================================================
+ * Shape + glow — applied directly to the key element.
+ * `.DefaultTheme [class*="KeyTheme_"]` covers all 58 labelled keys;
+ * the `_2KhPXi…` fallback also catches the spacebar (no KeyTheme_).
+ * ===================================================== */
+.DefaultTheme [class*="KeyTheme_"],
+.DefaultTheme [class*="_2KhPXikozxMpbIRo"] {
+  border-radius: calc(var(--sdkb-key-radius, 10) * 1px) !important;
+  border: calc(var(--sdkb-key-border-width, 0) * 1px) solid
+          var(--sdkb-key-border-color, transparent) !important;
+  box-shadow: var(--sdkb-glow, none) !important;
+  background-image: var(--sdkb-key-gradient, none) !important;
+  box-sizing: border-box !important;
+  transition: background-color var(--sdkb-transition, 120ms) ease,
+              transform 80ms ease !important;
+}
+
+/* key label size — only overrides the native size when the Custom
+ * "Label size" control is set; special keys (Enter/Backspace/Shift/Tab/
+ * Caps) keep the native size so their glyph never collides with the text. */
+.DefaultTheme [class*="KeyTheme_"]:not([class*="KeyTheme_Ent"]):not([class*="KeyTheme_Backspace"]):not([class*="KeyTheme_Shift"]):not([class*="KeyTheme_Tab"]):not([class*="KeyTheme_CapsLock"]) > span {
+  font-size: var(--sdkb-label-size, revert) !important;
+}
+
+/* spacing between keys */
+.DefaultTheme [class*="Row_"] {
+  gap: calc(var(--sdkb-key-gap, 0) * 1px) !important;
+}
+
+/* panel background (rainbow gradient support) */
+.DefaultTheme [class*="Layout_qwerty"] {
+  background: var(--sdkb-panel-bg, var(--sdkb-bg-color)) !important;
+}
+
+/* focused key (cursor on it, not pressed) — class `_21EoN…`.
+ * Steam sets its background via --key-focused-background-color; this
+ * adds an optional outer glow via --sdkb-focus-shadow. */
+.DefaultTheme [class*="KeyTheme_"][class*="_21EoN"] {
+  box-shadow: var(--sdkb-focus-shadow, var(--sdkb-glow, none)) !important;
+}
+
+/* =====================================================
+ * Pressed / touched key.
+ * Steam marks it with the `_3UFQq…` class (legacy Touched_3UFQq) and
+ * HARD-CODES its background to #1a9fff, ignoring --key-touched-*.
+ * So we re-theme it here, and lift it above its neighbours so the
+ * ripple (::after) is not clipped by later keys in the row.
+ * `_3UFQq` is a webpack hash prefix — see docs/keyboard-anatomy.md.
+ * ===================================================== */
+.DefaultTheme [class*="KeyTheme_"][class*="_3UFQq"],
+.DefaultTheme [class*="_2KhPXikozxMpbIRo"][class*="_3UFQq"] {
+  background-color: var(--sdkb-press-bg) !important;
+  background-image: none !important;
+  color: var(--sdkb-press-text) !important;
+  box-shadow: var(--sdkb-press-shadow) !important;   /* halo, inset bevel, … */
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* the expanding ripple */
+.DefaultTheme [class*="KeyTheme_"][class*="_3UFQq"]::after {
+  background: var(--sdkb-ripple) !important;
+}
+
+/* controller-button glyphs (L2 / X / R2 / L3) on special keys */
+.DefaultTheme [class*="KeyTheme_"] img[src*="steaminputglyphs"] {
+  filter: var(--sdkb-glyph-filter, none) !important;
+}
+
+/* utility keys — arrows, Paste, emoji / layout switch, hide-keyboard.
+ * Attribute selectors only — CSS Loader's class-name remapper rewrites
+ * bare `.KeyTheme_Ent` etc. to the wrong hash. */
+.DefaultTheme [class*="KeyTheme_VKClose"],
+.DefaultTheme [class*="KeyTheme_VKPaste"],
+.DefaultTheme [class*="KeyTheme_Arrow"],
+.DefaultTheme [class*="KeyTheme_SwitchKeys_"] {
+  background-color: var(--sdkb-util-bg) !important;
+  color: var(--sdkb-util-text) !important;
+}
+.DefaultTheme [class*="KeyTheme_VKPaste"] > span,
+.DefaultTheme [class*="KeyTheme_VKClose"] svg,
+.DefaultTheme [class*="KeyTheme_SwitchKeys_"] svg,
+.DefaultTheme [class*="KeyTheme_Arrow"] svg {
+  color: var(--sdkb-util-text) !important;
+  fill: var(--sdkb-util-text) !important;
+}
+/* function key TEXT labels ("Tab", "Enter"…) match the glyph colour */
+.DefaultTheme [class*="KeyTheme_Tab"] > span,
+.DefaultTheme [class*="KeyTheme_CapsLock"] > span,
+.DefaultTheme [class*="KeyTheme_Shift"] > span,
+.DefaultTheme [class*="KeyTheme_Ent"] > span,
+.DefaultTheme [class*="KeyTheme_Backspace"] > span {
+  color: var(--sdkb-glyph-color) !important;
+  fill: var(--sdkb-glyph-color) !important;
+}
+
+/* press animation — scale + brightness, tied to one variable.
+ * Press animation = Off sets --sdkb-press-scale to 1 -> both become no-ops. */
+.DefaultTheme [class*="KeyTheme_"]:active,
+.DefaultTheme [class*="KeyTheme_"][class*="_3UFQq"] {
+  transform: scale(var(--sdkb-press-scale, 0.9)) !important;
+  filter: brightness(calc(1 + (1 - var(--sdkb-press-scale, 0.9)) * 3)) !important;
 }

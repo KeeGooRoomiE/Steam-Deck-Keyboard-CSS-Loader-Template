@@ -1,56 +1,233 @@
 {
   "name": "Customizable Keyboard",
   "author": "KeeGooRoomiE",
-  "version": "v1.0.4",
-  "description": "Multi preset Steam Deck keyboard theme with clean styling and a fully customizable color mode.",
+  "version": "v2.0.0",
+  "description": "Steam Deck keyboard: 10 Steam Points Shop keyboards as colour presets (Spectrum, Cerulean, Digital, Seafoam, Totally Tubular, Grape, Ruby, Pumpkin, OLED, Limited Edition White) + One Dark, OLED Black, and a fully custom colour mode. Palettes sampled from the official Points Shop art.",
   "target": "Other",
   "manifest_version": 8,
   "inject": {
     "keyboard.css": ["bigpicture", "QuickAccess", "MainMenu"]
   },
   "patches": {
-    "Themes": {
-      "default": "Default",
+    "Preset": {
+      "default": "One Dark Style",
       "type": "dropdown",
       "values": {
-        "Default": {
-          "--sdkb-bg-color": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg": ["#1a1b22", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-hover": ["#242633", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-pressed": ["#2f3242", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color": ["#2b2d3a", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color-active": ["#3c3f52", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-color": ["#f5f5f7", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-secondary": ["#a0a3b5", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent": ["#00bfa5", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius": ["6px", "bigpicture", "QuickAccess", "MainMenu"]
+        "Steam Green": {
+          "--sdkb-bg-color": ["#3a4232", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#4E5846", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#525a44", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#404638", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#2b3025", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#c9b968", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#8a8560", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#404638", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#c9b968", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-width": ["1", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 1px 1px 0 rgba(210,205,150,0.18), inset -1px -1px 0 rgba(0,0,0,0.32)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-bg": ["#404638", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-text": ["#c9b968", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-color": ["#c9b968", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(80%) sepia(25%) saturate(700%) hue-rotate(1deg) brightness(92%) contrast(87%)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-bg": ["#404638", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-text": ["#c9b968", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-bg": ["#404638", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-text": ["#c9b968", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["inset 2px 2px 0 #000000, inset -2px -2px 0 #c9b968", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-ripple": ["rgba(0,0,0,0.22)", "bigpicture", "QuickAccess", "MainMenu"]
         },
-        "White": {
-          "--sdkb-bg-color": ["#e8eaed", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg": ["#f3f4f5", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-hover": ["#e1e3e6", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-pressed": ["#d7d9dc", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color": ["#c9ccd0", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color-active": ["#b7babd", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-color": ["#16181a", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-secondary": ["#5f6062", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent": ["#00b8ff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius": ["6px", "bigpicture", "QuickAccess", "MainMenu"]
-        },
-        "OLED Dark": {
+        "Spectrum": {
           "--sdkb-bg-color": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-hover": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-pressed": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color": ["#2a2b30", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color-active": ["#3a3d45", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-color": ["#d0d0d0", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-secondary": ["#7f828a", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent": ["#00b8ff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-panel-bg": ["linear-gradient(60deg, #6D1F3F, #712062, #571C74, #371876, #171B74, #181C7B, #213B7C, #2A5678, #2C5A7D, #3B7B7C, #3B7B55, #43852D, #41812C, #70802D, #776627, #7E4A23, #7D241F)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["transparent", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["rgba(255,255,255,0.22)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-width": ["0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#cfcfcf", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius": ["6px", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-key-radius": ["2", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["0 0 0 4px #000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-bg": ["transparent", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-color": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(100%)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-bg": ["transparent", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-spacebar-bg": ["transparent", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-spacebar-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-bg": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-text": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["0 0 0 4px #000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-ripple": ["rgba(0,0,0,0.2)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-focus-shadow": ["0 0 6px 2px rgba(255,255,255,0.55)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Cerulean": {
+          "--sdkb-bg-color": ["#0a2f4a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#124366", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#1a5480", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#0e3a5a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#1f6590", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#bce0f5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#78a8c8", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#22a8ec", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#04202e", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["3", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 0 0 8px rgba(40,170,240,0.22)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Digital": {
+          "--sdkb-bg-color": ["#020a03", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#081208", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#0d1f0d", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#050d05", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#123016", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#5bff5b", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#2f8a2f", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#39ff14", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#001400", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["none", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-bg": ["#33ff1e", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-text": ["#001400", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(70%) sepia(64%) saturate(1600%) hue-rotate(72deg) brightness(112%) contrast(104%)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-bg": ["#0f3a16", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-text": ["#7bff7b", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-color": ["#39ff14", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["0 0 14px 2px #39ff14", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-ripple": ["#39ff14", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-text": ["#39ff14", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Seafoam": {
+          "--sdkb-bg-color": ["#0a3d33", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#12564a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#1a6858", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#0e4a3e", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#1f7565", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#b8f0e2", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#78c0b0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#1fd0a8", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#04241c", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["3", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 0 0 8px rgba(30,240,200,0.22)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Candy Coded": {
+          "--sdkb-bg-color": ["#e6e7ea", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-gradient": ["linear-gradient(60deg, #ffffff, #dcdce2)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#79c2c7", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#5fb0b6", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-width": ["1", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#3a3f4a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#b7bec9", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#2b2e38", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["22", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 0 0 0 1px #E6E6E6, 0 0 4px rgba(0,0,0,0.18)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-bg": ["#2b2e38", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-bg": ["#2b2e38", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-text": ["#3E444F", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-color": ["#3E444F", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(23%) sepia(11%) saturate(1200%) hue-rotate(182deg) brightness(94%) contrast(89%)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-bg": ["#5fb0b6", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-text": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["none", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-ripple": ["rgba(95,176,182,0.35)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-spacebar-bg": ["#ffffff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-spacebar-text": ["#3a3f4a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-panel-bg": ["linear-gradient(60deg, #ffffff, #dcdce2)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Grape": {
+          "--sdkb-bg-color": ["#2a0f4a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#3d1a66", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#4a2078", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#331555", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#52288a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#d9b8f5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#a888c8", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#8a3fd0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#f0e2fa", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["3", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 0 0 8px rgba(180,90,255,0.25)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Ruby": {
+          "--sdkb-bg-color": ["#4a0f1c", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#6b1526", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#7d1c30", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#5a1020", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#8a2038", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#f0a8b2", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#c07782", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#b02038", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#f5dde1", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["3", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 0 0 8px rgba(255,60,90,0.25)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Pumpkin": {
+          "--sdkb-bg-color": ["#6e3212", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#824018", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#96501f", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#6a3010", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#a05a28", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#f5c89a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#c89060", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#d0641f", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#2a1206", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["3", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 0 0 8px rgba(255,140,60,0.25)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "OLED": {
+          "--sdkb-bg-color": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#0a0a0c", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#161616", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#230902", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#76200F", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#ff5a1f", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#76200F", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#ff5a1f", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["6", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 0 0 8px rgba(235,71,43,0.30)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-bg": ["var(--sdkb-key-bg)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-text": ["var(--sdkb-accent)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-color": ["#EB472B", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(42%) sepia(72%) saturate(2200%) hue-rotate(342deg) brightness(94%) contrast(95%)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-text": ["#EB472B", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-width": ["1", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-bg": ["#230902", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-text": ["#EB472B", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["inset 0 0 10px rgba(235,71,43,0.45)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-ripple": ["rgba(235,71,43,0.28)", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Limited Edition White": {
+          "--sdkb-bg-color": ["#B5B5B5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#EDEDED", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#E65A35", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#949494", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#B6B6B6", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#DADADA", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#B5B5B5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-width": ["0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["inset 1px 1px 0 #949494", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-bg": ["#B5B5B5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-text": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-color": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glyph-filter": ["brightness(0) saturate(100%) invert(97%)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-bg": ["#B5B5B5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-util-text": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-bg": ["#E65A35", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-text": ["#F8FDFD", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-press-shadow": ["none", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-ripple": ["rgba(255,255,255,0.25)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-spacebar-bg": ["#B5B5B5", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-spacebar-text": ["#F7F7F7", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "One Dark Style": {
           "--sdkb-bg-color": ["#1e2127", "bigpicture", "QuickAccess", "MainMenu"],
@@ -58,25 +235,25 @@
           "--sdkb-key-bg-hover": ["#303542", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-bg-pressed": ["#3b404c", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-border-color": ["#3b404c", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color-active": ["#4b5263", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-text-color": ["#abb2bf", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-key-text-secondary": ["#5c6370", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent": ["#61afef", "bigpicture", "QuickAccess", "MainMenu"],
           "--sdkb-accent-text": ["#0b1015", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius": ["4px", "bigpicture", "QuickAccess", "MainMenu"]
+          "--sdkb-key-radius": ["0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["none", "bigpicture", "QuickAccess", "MainMenu"]
         },
-        "Marshmallow": {
-          "--sdkb-bg-color": ["#fef7ff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg": ["#ffeefa", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-hover": ["#f7e5ff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-bg-pressed": ["#eed8ff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color": ["#f0cde9", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-border-color-active": ["#e1b5ff", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-color": ["#4a3b5a", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-text-secondary": ["#9b7fae", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent": ["#ffb3c6", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-accent-text": ["#3d2430", "bigpicture", "QuickAccess", "MainMenu"],
-          "--sdkb-key-radius": ["16px", "bigpicture", "QuickAccess", "MainMenu"]
+        "OLED Black": {
+          "--sdkb-bg-color": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-hover": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-bg-pressed": ["#101015", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-border-color": ["#2a2b30", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-color": ["#d0d0d0", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-text-secondary": ["#7f828a", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent": ["#00b8ff", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-accent-text": ["#000000", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-key-radius": ["6", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-glow": ["none", "bigpicture", "QuickAccess", "MainMenu"]
         },
         "Custom": {}
       },
@@ -98,7 +275,7 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Hover",
+          "name": "Key Focused",
           "type": "color-picker",
           "on": "Custom",
           "default": "#242633",
@@ -114,19 +291,11 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
-          "name": "Key Border",
-          "type": "color-picker",
-          "on": "Custom",
-          "default": "#2b2d3a",
-          "css_variable": "sdkb-key-border-color",
-          "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
-        },
-        {
-          "name": "Active Border",
+          "name": "Key Border Color",
           "type": "color-picker",
           "on": "Custom",
           "default": "#3c3f52",
-          "css_variable": "sdkb-key-border-color-active",
+          "css_variable": "sdkb-key-border-color",
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         },
         {
@@ -162,6 +331,29 @@
           "tabs": ["bigpicture", "QuickAccess", "MainMenu"]
         }
       ]
+    },
+    "Press animation": {
+      "default": "On",
+      "type": "dropdown",
+      "values": {
+        "On": {
+          "--sdkb-press-scale": ["0.9", "bigpicture", "QuickAccess", "MainMenu"]
+        },
+        "Off": {
+          "--sdkb-press-scale": ["1", "bigpicture", "QuickAccess", "MainMenu"]
+        }
+      }
+    },
+    "Function keys": {
+      "default": "Accent",
+      "type": "dropdown",
+      "values": {
+        "Accent": {},
+        "Neutral": {
+          "--sdkb-fn-bg": ["var(--sdkb-key-bg)", "bigpicture", "QuickAccess", "MainMenu"],
+          "--sdkb-fn-text": ["var(--sdkb-key-text-color)", "bigpicture", "QuickAccess", "MainMenu"]
+        }
+      }
     }
   }
 }

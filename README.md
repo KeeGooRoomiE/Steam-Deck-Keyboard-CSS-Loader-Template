@@ -19,10 +19,23 @@ See it on [DeckThemes](https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-
 
 ## ✨ Features
 
-- 🎨 Color pickers in CSS Loader UI — no code editing needed
-- 🔲 Key rounding presets (sharp / soft / pill)
-- 🧱 CSS variable architecture — structured and easy to fork
+- 🎨 **13 hand-tuned presets** — colours, corner radius, glow, and function-key style are baked into
+  each one individually:
+  - Inspired by Steam Points Shop keyboards: **Steam Green · Spectrum · Cerulean · Digital · Seafoam ·
+    Candy Coded · Grape · Ruby · Pumpkin · OLED · Limited Edition White**
+  - Plus **One Dark Style** and **OLED Black**
+- 🌈 Real per-key effects, not just flat recolours — Spectrum's rainbow gradient (with an authentic
+  per-row offset), Candy Coded's glossy gradient keycaps, OLED's inner glow, Steam Green's raised
+  bevel with an inverted pressed state — all from the same small set of CSS variables
+- 🎛️ Two global controls in the CSS Loader UI: **Press animation** (on/off) and **Function keys**
+  (accent / neutral)
+- 🖌️ Full **Custom** mode — 9 colour pickers for every part of the keyboard, no code
+- 🧱 CSS-variable architecture, verified live against the real Steam keyboard DOM
+  (see [`docs/keyboard-anatomy.md`](docs/keyboard-anatomy.md))
 - 📦 Drop-in install via Decky
+
+> The Points Shop–inspired presets are colour recreations tuned by hand against the official art —
+> not the original gradient/glow themes pixel-for-pixel.
 
 ---
 
