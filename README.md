@@ -11,7 +11,7 @@ A clean, modern, fully‑customizable keyboard theme for the Steam Deck.
 A CSS Loader plugin for restyle the Steam Deck on-screen keyboard — colors, key rounding, accents.
 Built as a template: fork it, change variables, ship your own theme in minutes.
 
-**16,000+ installs · 59 ⭐ on [DeckThemes](https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f)**
+See it on [DeckThemes](https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f)**
 
 ![Preview](small_preview.png)
 
