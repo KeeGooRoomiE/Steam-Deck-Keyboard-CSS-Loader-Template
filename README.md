@@ -63,6 +63,23 @@ Then: **Decky → CSS Loader → Manage Themes → Enable "Customizable Keyboard
 
 ---
 
+## 🖼️ Preset gallery
+
+<table>
+<tr>
+<td><img src="docs/presets/limited-edition-white.png" width="380" alt="Limited Edition White preset"><br><sub>Limited Edition White</sub></td>
+<td><img src="docs/presets/spectrum.png" width="380" alt="Spectrum preset"><br><sub>Spectrum</sub></td>
+</tr>
+<tr>
+<td><img src="docs/presets/oled.png" width="380" alt="OLED preset"><br><sub>OLED</sub></td>
+<td><img src="docs/presets/one-dark-style.png" width="380" alt="One Dark Style preset"><br><sub>One Dark Style</sub></td>
+</tr>
+</table>
+
+<sub>The <kbd>h</kbd> key is shown pressed in each shot.</sub>
+
+---
+
 ## 📄 License
 
 MIT — fork it, remix it, ship it.
