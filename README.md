@@ -1,5 +1,11 @@
 # 🎮 Steam Deck Customizable Keyboard
 
+[![DeckThemes downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.deckthemes.com%2Fthemes%2F0c5d6c86-ef3e-4af7-a041-34731a51fe7f&query=%24.download.downloadCount&label=downloads&color=1a9fff&style=for-the-badge&logo=steamdeck)](https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f)
+[![DeckThemes stars](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.deckthemes.com%2Fthemes%2F0c5d6c86-ef3e-4af7-a041-34731a51fe7f&query=%24.starCount&label=stars&color=ffb300&style=for-the-badge)](https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f)
+[![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.deckthemes.com%2Fthemes%2F0c5d6c86-ef3e-4af7-a041-34731a51fe7f&query=%24.version&label=DeckThemes&color=8b5cf6&style=for-the-badge)](https://deckthemes.com/themes/view?themeId=0c5d6c86-ef3e-4af7-a041-34731a51fe7f)
+
+A clean, modern, fully‑customizable keyboard theme for the Steam Deck.
+
 > Your Steam Deck keyboard. But actually yours.
 
 A CSS Loader plugin for restyle the Steam Deck on-screen keyboard — colors, key rounding, accents.
