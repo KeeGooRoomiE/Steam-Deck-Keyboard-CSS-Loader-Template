@@ -69,18 +69,17 @@ For B and C: **Decky → CSS Loader → Manage Themes → Enable "Customizable K
 
 ## 🖼️ Preset gallery
 
-<table>
-<tr>
-<td><img src="docs/presets/limited-edition-white.png" width="380" alt="Limited Edition White preset"><br><sub>Limited Edition White</sub></td>
-<td><img src="docs/presets/spectrum.png" width="380" alt="Spectrum preset"><br><sub>Spectrum</sub></td>
-</tr>
-<tr>
-<td><img src="docs/presets/oled.png" width="380" alt="OLED preset"><br><sub>OLED</sub></td>
-<td><img src="docs/presets/one-dark-style.png" width="380" alt="One Dark Style preset"><br><sub>One Dark Style</sub></td>
-</tr>
-</table>
+<sub>Captured on-device. The <kbd>h</kbd> key is shown pressed in every shot.</sub>
 
-<sub>The <kbd>h</kbd> key is shown pressed in each shot.</sub>
+| | |
+|---|---|
+| **Steam Green**<br><img src="docs/presets/steam-green.png" width="430"> | **Spectrum**<br><img src="docs/presets/spectrum.png" width="430"> |
+| **Cerulean**<br><img src="docs/presets/cerulean.png" width="430"> | **Digital**<br><img src="docs/presets/digital.png" width="430"> |
+| **Seafoam**<br><img src="docs/presets/seafoam.png" width="430"> | **Candy Coded**<br><img src="docs/presets/candy-coded.png" width="430"> |
+| **Grape**<br><img src="docs/presets/grape.png" width="430"> | **Ruby**<br><img src="docs/presets/ruby.png" width="430"> |
+| **Pumpkin**<br><img src="docs/presets/pumpkin.png" width="430"> | **OLED**<br><img src="docs/presets/oled.png" width="430"> |
+| **Limited Edition White**<br><img src="docs/presets/limited-edition-white.png" width="430"> | **Marshmallow**<br><img src="docs/presets/marshmallow.png" width="430"> |
+| **One Dark Style**<br><img src="docs/presets/one-dark-style.png" width="430"> | **OLED Black**<br><img src="docs/presets/oled-black.png" width="430"> |
 
 ---
 
