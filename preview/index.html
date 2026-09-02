@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Keyboard preview — Customizable Keyboard</title>
+<style>
+  body { margin:0; font-family:Arial,Helvetica,sans-serif; background:#15171c; color:#cfd2d8; }
+  .toolbar { position:sticky; top:0; z-index:10; display:flex; gap:14px; align-items:center;
+             flex-wrap:wrap; padding:12px 18px; background:#1d2027; border-bottom:1px solid #2b2f38; }
+  .toolbar label { font-size:13px; color:#9aa0aa; }
+  select, button { font:inherit; background:#262a33; color:#e6e8ec; border:1px solid #3a3f4a;
+                   border-radius:6px; padding:6px 10px; cursor:pointer; }
+  button.active { background:#3a6df0; border-color:#3a6df0; color:#fff; }
+  .backdrops button { width:26px; height:26px; padding:0; }
+  #stageWrap { display:flex; justify-content:flex-start; padding:34px 10px; overflow:auto; }
+  .kbd-stage { transform-origin:top left; }
+  .bd-deck  { background:#000; }
+  .bd-grey  { background:#3a3f4a; }
+  .bd-check { background:
+     repeating-conic-gradient(#2a2d34 0% 25%, #34383f 0% 50%) 50% / 24px 24px; }
+  .hint { font-size:12px; color:#7c828c; padding:6px 18px 14px; }
+  .DefaultTheme [class*="KeyTheme_"] { cursor:pointer; }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <label>Preset
+    <select id="preset"><option>Steam Green</option><option>Spectrum</option><option>Cerulean</option><option>Digital</option><option>Seafoam</option><option>Candy Coded</option><option>Grape</option><option>Ruby</option><option>Pumpkin</option><option>OLED</option><option>Limited Edition White</option><option>Marshmallow</option><option selected>One Dark Style</option><option>OLED Black</option></select>
+  </label>
+  <label>Zoom
+    <select id="zoom">
+      <option value="1">100%</option>
+      <option value="0.75">75%</option>
+      <option value="0.6" selected>60%</option>
+      <option value="0.5">50%</option>
+    </select>
+  </label>
+  <span class="states">
+    <button data-state="rest" class="active">Rest</button>
+    <button data-state="focus">Focus&nbsp;h</button>
+    <button data-state="press">Press&nbsp;h</button>
+  </span>
+  <span class="backdrops">
+    <button class="bd-deck active" data-bd="bd-deck" title="black"></button>
+    <button class="bd-grey" data-bd="bd-grey" title="grey"></button>
+    <button class="bd-check" data-bd="bd-check" title="checker"></button>
+  </span>
+  <span class="hint">click any key to toggle its pressed state</span>
+</div>
+
+<div id="stageWrap" class="bd-deck">
+  <div class="kbd-stage">
+<div class="DefaultTheme Oel3OSshpNqQ5hIOrC1Z5">
+<div class="_45rH7-kY4P2uVEb3TxZhm Layout_qwerty _45rH7-kY4P2uVEb3TxZhm DefaultTheme Panel">
+  <div class="d-_DJF8LavBgxrCblp2Kb Row_0 Panel"><div class="_2KhPXikozxMpbIRo_6jPxW Col_0 KeyTheme_`" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>~</span><span>`</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_1 KeyTheme_1" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>!</span><span>1</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_2 KeyTheme_2" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>@</span><span>2</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_3 KeyTheme_3" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>#</span><span>3</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_4 KeyTheme_4" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>$</span><span>4</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_5 KeyTheme_5" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>%</span><span>5</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_6 KeyTheme_6" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>^</span><span>6</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_7 KeyTheme_7" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>&amp;</span><span>7</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_8 KeyTheme_8" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>*</span><span>8</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_9 KeyTheme_9" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>(</span><span>9</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_10 KeyTheme_0" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>)</span><span>0</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_11 KeyTheme_-" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>_</span><span>-</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_12 KeyTheme_=" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>+</span><span>=</span></div><div class="_2KhPXikozxMpbIRo_6jPxW _3LsB3VZBjMjAp0RCa_3MGS Col_13 KeyTheme_Backspace" style="flex:1.9 1 0;"><div class='_3VtXfHDGV1q2LCVruVnHed'><img alt='X' src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'><rect x='0.5' y='0.5' width='33' height='19' rx='4' fill='%23222'/><text x='17' y='14' font-family='Arial' font-size='11' font-weight='700' text-anchor='middle' fill='%23fff'>X</text></svg>#steaminputglyphs/x.svg"></div><span>Backspace</span></div></div>
+  <div class="d-_DJF8LavBgxrCblp2Kb Row_1 Panel"><div class="_2KhPXikozxMpbIRo_6jPxW _3GfcsK1T47BLa5UQ3e4Xh3 Col_0 KeyTheme_Tab" style="flex:1.15 1 0;"><span>Tab</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_1 KeyTheme_q" style="flex:1.0 1 0;"><span>q</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_2 KeyTheme_w" style="flex:1.0 1 0;"><span>w</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_3 KeyTheme_e" style="flex:1.0 1 0;"><span>e</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_4 KeyTheme_r" style="flex:1.0 1 0;"><span>r</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_5 KeyTheme_t" style="flex:1.0 1 0;"><span>t</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_6 KeyTheme_y" style="flex:1.0 1 0;"><span>y</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_7 KeyTheme_u" style="flex:1.0 1 0;"><span>u</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_8 KeyTheme_i" style="flex:1.0 1 0;"><span>i</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_9 KeyTheme_o" style="flex:1.0 1 0;"><span>o</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_10 KeyTheme_p" style="flex:1.0 1 0;"><span>p</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_11 KeyTheme_[" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>{</span><span>[</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_12 KeyTheme_]" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>}</span><span>]</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_13 KeyTheme_\" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>|</span><span>\</span></div></div>
+  <div class="d-_DJF8LavBgxrCblp2Kb Row_2 Panel"><div class="_2KhPXikozxMpbIRo_6jPxW NGv5FNsp6c4OnD0_KOiDl Col_0 KeyTheme_CapsLock" style="flex:1.45 1 0;"><div class='_3VtXfHDGV1q2LCVruVnHed'><img alt='L3' src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'><rect x='0.5' y='0.5' width='33' height='19' rx='4' fill='%23222'/><text x='17' y='14' font-family='Arial' font-size='11' font-weight='700' text-anchor='middle' fill='%23fff'>L3</text></svg>#steaminputglyphs/l3.svg"></div><span>Caps</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_1 KeyTheme_a" style="flex:1.0 1 0;"><span>a</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_2 KeyTheme_s" style="flex:1.0 1 0;"><span>s</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_3 KeyTheme_d" style="flex:1.0 1 0;"><span>d</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_4 KeyTheme_f" style="flex:1.0 1 0;"><span>f</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_5 KeyTheme_g" style="flex:1.0 1 0;"><span>g</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_6 KeyTheme_h" style="flex:1.0 1 0;"><span>h</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_7 KeyTheme_j" style="flex:1.0 1 0;"><span>j</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_8 KeyTheme_k" style="flex:1.0 1 0;"><span>k</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_9 KeyTheme_l" style="flex:1.0 1 0;"><span>l</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_10 KeyTheme_;" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>:</span><span>;</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_11 KeyTheme_'" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>&quot;</span><span>&#x27;</span></div><div class="_2KhPXikozxMpbIRo_6jPxW IunX6VHNYj-i8dv5WJzpM Col_12 KeyTheme_Enter" style="flex:1.9 1 0;"><div class='_3VtXfHDGV1q2LCVruVnHed'><img alt='R2' src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'><rect x='0.5' y='0.5' width='33' height='19' rx='4' fill='%23222'/><text x='17' y='14' font-family='Arial' font-size='11' font-weight='700' text-anchor='middle' fill='%23fff'>R2</text></svg>#steaminputglyphs/r2.svg"></div><span>Enter</span></div></div>
+  <div class="d-_DJF8LavBgxrCblp2Kb Row_3 Panel"><div class="_2KhPXikozxMpbIRo_6jPxW _2ye7YjL-n6ql_6UPyf5ptv Col_0 KeyTheme_Shift" style="flex:2.15 1 0;"><div class='_3VtXfHDGV1q2LCVruVnHed'><img alt='L2' src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'><rect x='0.5' y='0.5' width='33' height='19' rx='4' fill='%23222'/><text x='17' y='14' font-family='Arial' font-size='11' font-weight='700' text-anchor='middle' fill='%23fff'>L2</text></svg>#steaminputglyphs/l2.svg"></div><span>Shift</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_1 KeyTheme_z" style="flex:1.0 1 0;"><span>z</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_2 KeyTheme_x" style="flex:1.0 1 0;"><span>x</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_3 KeyTheme_c" style="flex:1.0 1 0;"><span>c</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_4 KeyTheme_v" style="flex:1.0 1 0;"><span>v</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_5 KeyTheme_b" style="flex:1.0 1 0;"><span>b</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_6 KeyTheme_n" style="flex:1.0 1 0;"><span>n</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_7 KeyTheme_m" style="flex:1.0 1 0;"><span>m</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_8 KeyTheme_," style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>&lt;</span><span>,</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_9 KeyTheme_." style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>&gt;</span><span>.</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_10 KeyTheme_/" style="flex:1.0 1 0;"><span class='_3FZukK3yuHnaZ_X3yujMNS'>?</span><span>/</span></div><div class="_2KhPXikozxMpbIRo_6jPxW iMZ3TXDTLXYVzU8Q7A9yP Col_11 KeyTheme_Shift" style="flex:2.15 1 0;"><div class='_3VtXfHDGV1q2LCVruVnHed'><img alt='L2' src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 20'><rect x='0.5' y='0.5' width='33' height='19' rx='4' fill='%23222'/><text x='17' y='14' font-family='Arial' font-size='11' font-weight='700' text-anchor='middle' fill='%23fff'>L2</text></svg>#steaminputglyphs/l2.svg"></div><span>Shift</span></div></div>
+  <div class="d-_DJF8LavBgxrCblp2Kb Row_4 Panel"><div class="_2KhPXikozxMpbIRo_6jPxW _1WbIjnypHqw8t8_NFQHPJr Col_0 KeyTheme_SwitchKeys_Emoticons" style="flex:1.3 1 0;"><span><svg viewBox='0 0 36 36' fill='none'><circle cx='18' cy='18' r='14' stroke='currentColor' stroke-width='2.5'/><circle cx='13' cy='15' r='1.8' fill='currentColor'/><circle cx='23' cy='15' r='1.8' fill='currentColor'/><path d='M12 22c2 2.6 4 3.6 6 3.6s4-1 6-3.6' stroke='currentColor' stroke-width='2.5' stroke-linecap='round'/></svg></span></div><div class="_2KhPXikozxMpbIRo_6jPxW _1WbIjnypHqw8t8_NFQHPJr Col_1 KeyTheme_SwitchKeys_Layout" style="flex:1.3 1 0;"><span><svg viewBox='0 0 36 36' fill='none'><circle cx='18' cy='18' r='14' stroke='currentColor' stroke-width='2.2'/><path d='M4 18h28M18 4c4 4 4 24 0 28M18 4c-4 4-4 24 0 28' stroke='currentColor' stroke-width='2.2'/></svg></span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_2 KeyTheme_Space" style="flex:7.5 1 0;"></div><div class="_2KhPXikozxMpbIRo_6jPxW _1WbIjnypHqw8t8_NFQHPJr Col_3 KeyTheme_ArrowUp" style="flex:1.1 1 0;"><span><svg viewBox='0 0 36 36' fill='none'><path d='M10 22l8-9 8 9' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg></span></div><div class="_2KhPXikozxMpbIRo_6jPxW _1WbIjnypHqw8t8_NFQHPJr Col_4 KeyTheme_ArrowLeft" style="flex:1.1 1 0;"><span><svg viewBox='0 0 36 36' fill='none'><path d='M22 10l-9 8 9 8' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg></span></div><div class="_2KhPXikozxMpbIRo_6jPxW _1WbIjnypHqw8t8_NFQHPJr Col_5 KeyTheme_ArrowRight" style="flex:1.1 1 0;"><span><svg viewBox='0 0 36 36' fill='none'><path d='M14 10l9 8-9 8' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg></span></div><div class="_2KhPXikozxMpbIRo_6jPxW _1WbIjnypHqw8t8_NFQHPJr Col_6 KeyTheme_VKPaste" style="flex:1.6 1 0;"><span>Paste</span></div><div class="_2KhPXikozxMpbIRo_6jPxW Col_7 KeyTheme_VKClose" style="flex:1.3 1 0;"><span><svg viewBox='0 0 36 36' fill='none'><rect x='3' y='7' width='30' height='16' rx='2' stroke='currentColor' stroke-width='2'/><path d='M8 27l20 0' stroke='currentColor' stroke-width='2' stroke-linecap='round'/></svg></span></div></div>
+</div>
+</div>
+  </div>
+</div>
+
+<p class="hint">Reconstructed layout — key widths, fonts and glyph art are approximations of the
+real Steam OSK. Class names, structure, states and the project <code>keyboard.css</code> are the real thing.</p>
+
+<style id="steam-base">
+/* --- reconstructed minimal Steam OSK base (approximation) --- */
+.kbd-stage { display:inline-block; padding:24px; }
+.DefaultTheme.Oel3OSshpNqQ5hIOrC1Z5 { display:inline-block; background: var(--background-color,#1e2127); }
+._45rH7-kY4P2uVEb3TxZhm.Layout_qwerty {
+  display:flex; flex-direction:column; width:1200px;
+  padding:3px 3px 1px 1px; background: var(--background-color,#1e2127);
+}
+[class*="Row_"] { display:flex; }
+._2KhPXikozxMpbIRo_6jPxW {
+  height:44px; margin:1px; display:flex; align-items:center; justify-content:center;
+  position:relative; box-sizing:border-box; overflow:visible; user-select:none;
+  font-family:"Motiva Sans","Arial",sans-serif; font-size:16px; line-height:1;
+  background-color: var(--key-background-color,#282c34);
+  color: var(--key-color,#abb2bf);
+}
+._2KhPXikozxMpbIRo_6jPxW > span { position:relative; z-index:1; }
+._2KhPXikozxMpbIRo_6jPxW svg { width:20px; height:20px; display:block; }
+._3FZukK3yuHnaZ_X3yujMNS {
+  position:absolute; top:3px; left:7px; font-size:11px; z-index:1;
+  opacity:.45; color: var(--key-shift-label-color, currentColor);
+}
+._3VtXfHDGV1q2LCVruVnHed { position:absolute; right:8px; bottom:6px; margin:0; line-height:0; }
+._3VtXfHDGV1q2LCVruVnHed img { width:24px; height:14px; display:block; }
+/* function keys read Steam's per-key vars */
+.KeyTheme_Backspace { background-color: var(--key-backspace-background-color); color: var(--key-backspace-color); }
+.KeyTheme_Enter     { background-color: var(--key-enter-background-color);     color: var(--key-enter-color); }
+.KeyTheme_Tab       { background-color: var(--key-tab-background-color);       color: var(--key-tab-color); }
+.KeyTheme_CapsLock  { background-color: var(--key-caps-background-color);      color: var(--key-caps-color); }
+.KeyTheme_Shift     { background-color: var(--key-shift-background-color);     color: var(--key-shift-color); }
+.KeyTheme_Space     { background-color: var(--key-spacebar-background-color);  color: var(--key-spacebar-color); }
+/* focused */
+._21EoN2ZlmHNY3fjho_HMae {
+  background-color: var(--key-focused-background-color,#3a3f4a);
+  color: var(--key-focused-color,inherit);
+}
+/* touched — Steam hard-codes the blue + a white ripple ::after */
+._3UFQq1GinEyksceos-TETi { background-color: #1a9fff; }
+._3UFQq1GinEyksceos-TETi::after {
+  content:""; position:absolute; inset:0; border-radius:inherit;
+  background:#fff; opacity:.55; mix-blend-mode:overlay; z-index:2;
+}
+</style>
+<style id="keyboard-css">/* =====================================================
+ * Steam Deck Customizable Keyboard
+ *
+ * Restyles the Steam on-screen keyboard via CSS Loader.
+ *
+ * Verified live against the Steam client (Aug 2026 build) —
+ * full DOM/reference in docs/keyboard-anatomy.md
+ *
+ *   container / var host : .DefaultTheme
+ *   every key            : .DefaultTheme [class*="KeyTheme_"]
+ *   key label            : .DefaultTheme [class*="KeyTheme_"] > span
+ *   pressed state        : :active   (there is no :hover)
+ *   focus / touch        : handled by Steam via --key-*-color vars
+ *
+ * Steam exposes colours as CSS variables but NOT radius/border/shadow,
+ * so shape + glow are applied with direct rules on the key element.
+ * ===================================================== */
+
+:root {
+  /* ===== Colours ===== */
+  --sdkb-bg-color: #101015;          /* keyboard background            */
+
+  --sdkb-key-bg: #1a1b22;            /* normal key                     */
+  --sdkb-key-bg-hover: #242633;      /* focused key (cursor on it)     */
+  --sdkb-key-bg-pressed: #2f3242;    /* pressed / touched key          */
+
+  --sdkb-key-text-color: #f5f5f7;    /* key label                      */
+  --sdkb-key-text-secondary: #a0a3b5;/* hints / dead keys (fork hook)  */
+
+  /* Accent — function keys: Enter, Shift, Tab, Caps, Backspace, toggles */
+  --sdkb-accent: #00bfa5;
+  --sdkb-accent-text: #0b1015;
+
+  /* Function-key fill. Defaults to the accent; the "Function keys"
+   * control can switch this to a neutral key colour.                  */
+  --sdkb-fn-bg: var(--sdkb-accent);
+  --sdkb-fn-text: var(--sdkb-accent-text);
+
+  /* ===== Shape / spacing =====
+   * Unit-less numbers — px is added in CSS (calc). Each preset sets its
+   * own radius; the Custom-mode controls can override.               */
+  --sdkb-key-radius: 6;              /* key corner radius (0–24)       */
+  --sdkb-key-border-width: 0;        /* 0 = borderless (Steam default) */
+  --sdkb-key-border-color: #3c3f52;  /* only visible when width > 0    */
+  --sdkb-key-gap: 0;                 /* space between keys (0–12)      */
+  /* --sdkb-label-size: unset -> native Steam label size (see rule below) */
+
+  /* ===== Feedback ===== */
+  --sdkb-press-scale: 0.9;           /* "Press animation" Off sets this to 1 */
+  --sdkb-transition: 120ms;
+
+  /* Resting-key box-shadow — flat glow, inset bevel, whatever. Full value. */
+  --sdkb-glow: 0 0 transparent;
+  /* Focused-key box-shadow. Defaults to the resting glow. */
+  --sdkb-focus-shadow: var(--sdkb-glow);
+  /* Optional per-key background-image (a gradient, etc.), layered over
+   * --sdkb-key-bg (background-color can't hold a gradient). */
+  --sdkb-key-gradient: none;
+
+  /* Utility keys — arrows / Paste / emoji+layout switch / hide-keyboard.
+   * Default to the function-key look; a preset can make them neutral.  */
+  --sdkb-util-bg: var(--sdkb-fn-bg);
+  --sdkb-util-text: var(--sdkb-fn-text);
+
+  /* Pressed / held key. Steam hard-codes its background blue, so we
+   * re-theme it. --sdkb-press-shadow is a full box-shadow value
+   * (halo, inset bevel…); --sdkb-ripple colours the expanding ::after. */
+  --sdkb-press-bg: var(--sdkb-accent);
+  --sdkb-press-text: var(--sdkb-accent-text);
+  --sdkb-press-shadow: 0 0 14px 2px var(--sdkb-accent);
+  --sdkb-ripple: var(--sdkb-accent);
+
+  /* Icon colour:
+   *  - <img> controller glyphs (L2 / X / R2 / L3) -> tinted with a filter
+   *  - inline <svg> on function keys              -> --sdkb-glyph-color
+   *  - inline <svg> on utility keys               -> --sdkb-util-text     */
+  --sdkb-glyph-filter: none;
+  --sdkb-glyph-color: var(--sdkb-fn-text);
+
+  /* Panel background. Usually = the keyboard bg. Set it to a gradient
+   * (with transparent keys) to get a Spectrum-style rainbow.          */
+  --sdkb-panel-bg: var(--sdkb-bg-color);
+}
+
+/* =====================================================
+ * Map sdkb variables -> Steam's DefaultTheme colour vars.
+ * These are the only colour hooks Steam exposes (all verified live).
+ * ===================================================== */
+.DefaultTheme {
+  /* overall background */
+  --background-color: var(--sdkb-bg-color);
+
+  /* base keys */
+  --key-background-color: var(--sdkb-key-bg);
+  --key-focused-background-color: var(--sdkb-key-bg-hover);
+  --key-touched-background-color: var(--sdkb-key-bg-pressed);
+
+  --key-color: var(--sdkb-key-text-color);
+  --key-focused-color: var(--sdkb-key-text-color);
+  --key-touched-color: var(--sdkb-key-text-color);
+
+  /* function / special keys -> --sdkb-fn-* (accent by default) */
+  --key-meta-background-color: var(--sdkb-fn-bg);
+  --key-meta-color: var(--sdkb-fn-text);
+
+  --key-tab-background-color: var(--sdkb-fn-bg);
+  --key-tab-color: var(--sdkb-fn-text);
+
+  --key-caps-background-color: var(--sdkb-fn-bg);
+  --key-caps-color: var(--sdkb-fn-text);
+
+  --key-shift-background-color: var(--sdkb-fn-bg);
+  --key-shift-color: var(--sdkb-fn-text);
+
+  --key-enter-background-color: var(--sdkb-fn-bg);
+  --key-enter-color: var(--sdkb-fn-text);
+
+  --key-backspace-background-color: var(--sdkb-fn-bg);
+  --key-backspace-color: var(--sdkb-fn-text);
+
+  --key-toggleon-background-color: var(--sdkb-accent);
+  --key-toggleon-color: var(--sdkb-accent-text);
+
+  /* the small "shifted" hint char on every key (the `!` above `1`, etc.) */
+  --key-shift-label-color: var(--sdkb-key-text-secondary);
+  --key-focused-shift-label-color: var(--sdkb-key-text-secondary);
+
+  /* spacebar — defaults to a normal key; a preset can make it a fn key */
+  --key-spacebar-background-color: var(--sdkb-spacebar-bg, var(--sdkb-key-bg));
+  --key-spacebar-color: var(--sdkb-spacebar-text, var(--sdkb-key-text-color));
+
+  /* extended (long-press) popup keys */
+  --key-extendedkey-background-color: var(--sdkb-key-bg-hover);
+  --key-extendedkey-color: var(--sdkb-key-text-color);
+  /* (utility keys — arrows / Paste / emoji+layout switch / hide-keyboard —
+   *  are re-coloured by a rule below, not via a Steam var) */
+  --key-extendedkey-focused-background-color: var(--sdkb-accent);
+  --key-extendedkey-focused-color: var(--sdkb-accent-text);
+}
+
+/* =====================================================
+ * Shape + glow — applied directly to the key element.
+ * `.DefaultTheme [class*="KeyTheme_"]` covers all 58 labelled keys;
+ * the `_2KhPXi…` fallback also catches the spacebar (no KeyTheme_).
+ * ===================================================== */
+.DefaultTheme [class*="KeyTheme_"],
+.DefaultTheme [class*="_2KhPXikozxMpbIRo"] {
+  border-radius: calc(var(--sdkb-key-radius, 10) * 1px) !important;
+  border: calc(var(--sdkb-key-border-width, 0) * 1px) solid
+          var(--sdkb-key-border-color, transparent) !important;
+  box-shadow: var(--sdkb-glow) !important;
+  background-image: var(--sdkb-key-gradient, none) !important;
+  box-sizing: border-box !important;
+  transition: background-color var(--sdkb-transition, 120ms) ease,
+              transform 80ms ease !important;
+}
+
+/* key label size — only overrides the native size when the Custom
+ * "Label size" control is set; special keys (Enter/Backspace/Shift/Tab/
+ * Caps) keep the native size so their glyph never collides with the text. */
+.DefaultTheme [class*="KeyTheme_"]:not([class*="KeyTheme_Ent"]):not([class*="KeyTheme_Backspace"]):not([class*="KeyTheme_Shift"]):not([class*="KeyTheme_Tab"]):not([class*="KeyTheme_CapsLock"]) > span {
+  font-size: var(--sdkb-label-size, revert) !important;
+}
+
+/* spacing between keys */
+.DefaultTheme [class*="Row_"] {
+  gap: calc(var(--sdkb-key-gap, 0) * 1px) !important;
+}
+
+/* panel background (rainbow gradient support) */
+.DefaultTheme [class*="Layout_qwerty"] {
+  background: var(--sdkb-panel-bg, var(--sdkb-bg-color)) !important;
+}
+
+/* focused key (cursor on it, not pressed) — class `_21EoN…`.
+ * Steam sets its background via --key-focused-background-color; this
+ * adds an optional outer glow via --sdkb-focus-shadow. */
+.DefaultTheme [class*="KeyTheme_"][class*="_21EoN"] {
+  box-shadow: var(--sdkb-focus-shadow) !important;
+}
+
+/* =====================================================
+ * Pressed / touched key.
+ * Steam marks it with the `_3UFQq…` class (legacy Touched_3UFQq) and
+ * HARD-CODES its background to #1a9fff, ignoring --key-touched-*.
+ * So we re-theme it here, and lift it above its neighbours so the
+ * ripple (::after) is not clipped by later keys in the row.
+ * `_3UFQq` is a webpack hash prefix — see docs/keyboard-anatomy.md.
+ * ===================================================== */
+.DefaultTheme [class*="KeyTheme_"][class*="_3UFQq"],
+.DefaultTheme [class*="_2KhPXikozxMpbIRo"][class*="_3UFQq"] {
+  background-color: var(--sdkb-press-bg) !important;
+  background-image: none !important;
+  color: var(--sdkb-press-text) !important;
+  box-shadow: var(--sdkb-press-shadow) !important;   /* halo, inset bevel, … */
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* the expanding ripple */
+.DefaultTheme [class*="KeyTheme_"][class*="_3UFQq"]::after {
+  background: var(--sdkb-ripple) !important;
+}
+
+/* controller-button glyphs (L2 / X / R2 / L3) on special keys */
+.DefaultTheme [class*="KeyTheme_"] img[src*="steaminputglyphs"] {
+  filter: var(--sdkb-glyph-filter, none) !important;
+}
+
+/* utility keys — arrows, Paste, emoji / layout switch, hide-keyboard.
+ * Attribute selectors only — CSS Loader's class-name remapper rewrites
+ * bare `.KeyTheme_Ent` etc. to the wrong hash. */
+.DefaultTheme [class*="KeyTheme_VKClose"],
+.DefaultTheme [class*="KeyTheme_VKPaste"],
+.DefaultTheme [class*="KeyTheme_Arrow"],
+.DefaultTheme [class*="KeyTheme_SwitchKeys_"] {
+  background-color: var(--sdkb-util-bg) !important;
+  color: var(--sdkb-util-text) !important;
+}
+.DefaultTheme [class*="KeyTheme_VKPaste"] > span,
+.DefaultTheme [class*="KeyTheme_VKClose"] svg,
+.DefaultTheme [class*="KeyTheme_SwitchKeys_"] svg,
+.DefaultTheme [class*="KeyTheme_Arrow"] svg {
+  color: var(--sdkb-util-text) !important;
+  fill: var(--sdkb-util-text) !important;
+}
+/* function key TEXT labels ("Tab", "Enter"…) match the glyph colour */
+.DefaultTheme [class*="KeyTheme_Tab"] > span,
+.DefaultTheme [class*="KeyTheme_CapsLock"] > span,
+.DefaultTheme [class*="KeyTheme_Shift"] > span,
+.DefaultTheme [class*="KeyTheme_Ent"] > span,
+.DefaultTheme [class*="KeyTheme_Backspace"] > span {
+  color: var(--sdkb-glyph-color) !important;
+  fill: var(--sdkb-glyph-color) !important;
+}
+
+/* press animation — scale + brightness, tied to one variable.
+ * Press animation = Off sets --sdkb-press-scale to 1 -> both become no-ops. */
+.DefaultTheme [class*="KeyTheme_"]:active,
+.DefaultTheme [class*="KeyTheme_"][class*="_3UFQq"] {
+  transform: scale(var(--sdkb-press-scale, 0.9)) !important;
+  filter: brightness(calc(1 + (1 - var(--sdkb-press-scale, 0.9)) * 3)) !important;
+}
+</style>
+<style id="preset-vars">:root{--sdkb-bg-color:#1e2127;--sdkb-key-bg:#282c34;--sdkb-key-bg-hover:#303542;--sdkb-key-bg-pressed:#3b404c;--sdkb-key-border-color:#3b404c;--sdkb-key-text-color:#abb2bf;--sdkb-key-text-secondary:#5c6370;--sdkb-accent:#61afef;--sdkb-accent-text:#0b1015;--sdkb-key-radius:0;--sdkb-glow:0 0 transparent;}</style>
+
+<script>
+const PRESETS = {"Steam Green": {"--sdkb-bg-color": "#3a4232", "--sdkb-key-bg": "#4E5846", "--sdkb-key-bg-hover": "#525a44", "--sdkb-key-bg-pressed": "#404638", "--sdkb-key-border-color": "#2b3025", "--sdkb-key-text-color": "#c9b968", "--sdkb-key-text-secondary": "#8a8560", "--sdkb-accent": "#404638", "--sdkb-accent-text": "#c9b968", "--sdkb-key-radius": "0", "--sdkb-key-border-width": "1", "--sdkb-glow": "inset 1px 1px 0 rgba(210,205,150,0.18), inset -1px -1px 0 rgba(0,0,0,0.32)", "--sdkb-fn-bg": "#404638", "--sdkb-fn-text": "#c9b968", "--sdkb-glyph-color": "#c9b968", "--sdkb-glyph-filter": "brightness(0) saturate(100%) invert(80%) sepia(25%) saturate(700%) hue-rotate(1deg) brightness(92%) contrast(87%)", "--sdkb-util-bg": "#404638", "--sdkb-util-text": "#c9b968", "--sdkb-press-bg": "#404638", "--sdkb-press-text": "#c9b968", "--sdkb-press-shadow": "inset 2px 2px 0 #000000, inset -2px -2px 0 #c9b968", "--sdkb-ripple": "rgba(0,0,0,0.22)"}, "Spectrum": {"--sdkb-bg-color": "#000000", "--sdkb-panel-bg": "linear-gradient(60deg, #6D1F3F, #712062, #571C74, #371876, #171B74, #181C7B, #213B7C, #2A5678, #2C5A7D, #3B7B7C, #3B7B55, #43852D, #41812C, #70802D, #776627, #7E4A23, #7D241F)", "--sdkb-key-bg": "transparent", "--sdkb-key-bg-hover": "rgba(255,255,255,0.22)", "--sdkb-key-bg-pressed": "#ffffff", "--sdkb-key-border-color": "#000000", "--sdkb-key-border-width": "0", "--sdkb-key-text-color": "#ffffff", "--sdkb-key-text-secondary": "#cfcfcf", "--sdkb-accent": "#ffffff", "--sdkb-accent-text": "#000000", "--sdkb-key-radius": "2", "--sdkb-glow": "0 0 0 4px #000000", "--sdkb-fn-bg": "transparent", "--sdkb-fn-text": "#ffffff", "--sdkb-glyph-color": "#ffffff", "--sdkb-glyph-filter": "brightness(0) saturate(100%) invert(100%)", "--sdkb-util-bg": "transparent", "--sdkb-util-text": "#ffffff", "--sdkb-spacebar-bg": "transparent", "--sdkb-spacebar-text": "#ffffff", "--sdkb-press-bg": "#ffffff", "--sdkb-press-text": "#000000", "--sdkb-press-shadow": "0 0 0 4px #000000", "--sdkb-ripple": "rgba(0,0,0,0.2)", "--sdkb-focus-shadow": "0 0 6px 2px rgba(255,255,255,0.55)"}, "Cerulean": {"--sdkb-bg-color": "#0a2f4a", "--sdkb-key-bg": "#124366", "--sdkb-key-bg-hover": "#1a5480", "--sdkb-key-bg-pressed": "#0e3a5a", "--sdkb-key-border-color": "#1f6590", "--sdkb-key-text-color": "#bce0f5", "--sdkb-key-text-secondary": "#78a8c8", "--sdkb-accent": "#22a8ec", "--sdkb-accent-text": "#04202e", "--sdkb-key-radius": "3", "--sdkb-glow": "inset 0 0 8px rgba(40,170,240,0.22)"}, "Digital": {"--sdkb-bg-color": "#020a03", "--sdkb-key-bg": "#081208", "--sdkb-key-bg-hover": "#0d1f0d", "--sdkb-key-bg-pressed": "#050d05", "--sdkb-key-border-color": "#123016", "--sdkb-key-text-color": "#5bff5b", "--sdkb-key-text-secondary": "#2f8a2f", "--sdkb-accent": "#39ff14", "--sdkb-accent-text": "#001400", "--sdkb-key-radius": "0", "--sdkb-glow": "0 0 transparent", "--sdkb-press-bg": "#33ff1e", "--sdkb-press-text": "#001400", "--sdkb-glyph-filter": "brightness(0) saturate(100%) invert(70%) sepia(64%) saturate(1600%) hue-rotate(72deg) brightness(112%) contrast(104%)", "--sdkb-fn-bg": "#0f3a16", "--sdkb-fn-text": "#7bff7b", "--sdkb-glyph-color": "#39ff14", "--sdkb-press-shadow": "0 0 14px 2px #39ff14", "--sdkb-ripple": "#39ff14", "--sdkb-util-text": "#39ff14"}, "Seafoam": {"--sdkb-bg-color": "#0a3d33", "--sdkb-key-bg": "#12564a", "--sdkb-key-bg-hover": "#1a6858", "--sdkb-key-bg-pressed": "#0e4a3e", "--sdkb-key-border-color": "#1f7565", "--sdkb-key-text-color": "#b8f0e2", "--sdkb-key-text-secondary": "#78c0b0", "--sdkb-accent": "#1fd0a8", "--sdkb-accent-text": "#04241c", "--sdkb-key-radius": "3", "--sdkb-glow": "inset 0 0 8px rgba(30,240,200,0.22)"}, "Candy Coded": {"--sdkb-bg-color": "#e6e7ea", "--sdkb-key-bg": "#ffffff", "--sdkb-key-gradient": "linear-gradient(60deg, #ffffff, #dcdce2)", "--sdkb-key-bg-hover": "#79c2c7", "--sdkb-key-bg-pressed": "#5fb0b6", "--sdkb-key-border-color": "#000000", "--sdkb-key-border-width": "1", "--sdkb-key-text-color": "#3a3f4a", "--sdkb-key-text-secondary": "#b7bec9", "--sdkb-accent": "#2b2e38", "--sdkb-accent-text": "#ffffff", "--sdkb-key-radius": "22", "--sdkb-glow": "inset 0 0 0 1px #E6E6E6, 0 0 4px rgba(0,0,0,0.18)", "--sdkb-fn-bg": "#2b2e38", "--sdkb-fn-text": "#ffffff", "--sdkb-util-bg": "#2b2e38", "--sdkb-util-text": "#3E444F", "--sdkb-glyph-color": "#3E444F", "--sdkb-glyph-filter": "brightness(0) saturate(100%) invert(23%) sepia(11%) saturate(1200%) hue-rotate(182deg) brightness(94%) contrast(89%)", "--sdkb-press-bg": "#5fb0b6", "--sdkb-press-text": "#ffffff", "--sdkb-press-shadow": "0 0 transparent", "--sdkb-ripple": "rgba(95,176,182,0.35)", "--sdkb-spacebar-bg": "#ffffff", "--sdkb-spacebar-text": "#3a3f4a", "--sdkb-panel-bg": "linear-gradient(60deg, #ffffff, #dcdce2)"}, "Grape": {"--sdkb-bg-color": "#2a0f4a", "--sdkb-key-bg": "#3d1a66", "--sdkb-key-bg-hover": "#4a2078", "--sdkb-key-bg-pressed": "#331555", "--sdkb-key-border-color": "#52288a", "--sdkb-key-text-color": "#d9b8f5", "--sdkb-key-text-secondary": "#a888c8", "--sdkb-accent": "#8a3fd0", "--sdkb-accent-text": "#f0e2fa", "--sdkb-key-radius": "3", "--sdkb-glow": "inset 0 0 8px rgba(180,90,255,0.25)"}, "Ruby": {"--sdkb-bg-color": "#4a0f1c", "--sdkb-key-bg": "#6b1526", "--sdkb-key-bg-hover": "#7d1c30", "--sdkb-key-bg-pressed": "#5a1020", "--sdkb-key-border-color": "#8a2038", "--sdkb-key-text-color": "#f0a8b2", "--sdkb-key-text-secondary": "#c07782", "--sdkb-accent": "#b02038", "--sdkb-accent-text": "#f5dde1", "--sdkb-key-radius": "3", "--sdkb-glow": "inset 0 0 8px rgba(255,60,90,0.25)"}, "Pumpkin": {"--sdkb-bg-color": "#6e3212", "--sdkb-key-bg": "#824018", "--sdkb-key-bg-hover": "#96501f", "--sdkb-key-bg-pressed": "#6a3010", "--sdkb-key-border-color": "#a05a28", "--sdkb-key-text-color": "#f5c89a", "--sdkb-key-text-secondary": "#c89060", "--sdkb-accent": "#d0641f", "--sdkb-accent-text": "#2a1206", "--sdkb-key-radius": "3", "--sdkb-glow": "inset 0 0 8px rgba(255,140,60,0.25)"}, "OLED": {"--sdkb-bg-color": "#000000", "--sdkb-key-bg": "#0a0a0c", "--sdkb-key-bg-hover": "#161616", "--sdkb-key-bg-pressed": "#230902", "--sdkb-key-border-color": "#76200F", "--sdkb-key-text-color": "#ff5a1f", "--sdkb-key-text-secondary": "#76200F", "--sdkb-accent": "#ff5a1f", "--sdkb-accent-text": "#000000", "--sdkb-key-radius": "6", "--sdkb-glow": "inset 0 0 8px rgba(235,71,43,0.30)", "--sdkb-fn-bg": "var(--sdkb-key-bg)", "--sdkb-fn-text": "var(--sdkb-accent)", "--sdkb-glyph-color": "#EB472B", "--sdkb-glyph-filter": "brightness(0) saturate(100%) invert(42%) sepia(72%) saturate(2200%) hue-rotate(342deg) brightness(94%) contrast(95%)", "--sdkb-util-text": "#EB472B", "--sdkb-key-border-width": "1", "--sdkb-press-bg": "#230902", "--sdkb-press-text": "#EB472B", "--sdkb-press-shadow": "inset 0 0 10px rgba(235,71,43,0.45)", "--sdkb-ripple": "rgba(235,71,43,0.28)"}, "Limited Edition White": {"--sdkb-bg-color": "#B5B5B5", "--sdkb-key-bg": "#F7F7F7", "--sdkb-key-bg-hover": "#EDEDED", "--sdkb-key-bg-pressed": "#E65A35", "--sdkb-key-border-color": "#949494", "--sdkb-key-text-color": "#B6B6B6", "--sdkb-key-text-secondary": "#DADADA", "--sdkb-accent": "#B5B5B5", "--sdkb-accent-text": "#F7F7F7", "--sdkb-key-radius": "5", "--sdkb-key-border-width": "0", "--sdkb-glow": "inset 1px 1px 0 #949494", "--sdkb-fn-bg": "#B5B5B5", "--sdkb-fn-text": "#F7F7F7", "--sdkb-glyph-color": "#F7F7F7", "--sdkb-glyph-filter": "brightness(0) saturate(100%) invert(97%)", "--sdkb-util-bg": "#B5B5B5", "--sdkb-util-text": "#F7F7F7", "--sdkb-press-bg": "#E65A35", "--sdkb-press-text": "#F8FDFD", "--sdkb-press-shadow": "0 0 transparent", "--sdkb-ripple": "rgba(255,255,255,0.25)", "--sdkb-spacebar-bg": "#B5B5B5", "--sdkb-spacebar-text": "#F7F7F7"}, "Marshmallow": {"--sdkb-bg-color": "#fdf2f7", "--sdkb-key-bg": "#ffeef5", "--sdkb-key-gradient": "linear-gradient(60deg, #fff6fb, #ffe1ee)", "--sdkb-key-bg-hover": "#ffe0ee", "--sdkb-key-bg-pressed": "#ffd4e6", "--sdkb-key-border-color": "transparent", "--sdkb-key-border-width": "0", "--sdkb-key-text-color": "#8a8790", "--sdkb-key-text-secondary": "#c2bcc8", "--sdkb-accent": "#ffb3cf", "--sdkb-accent-text": "#6f6c78", "--sdkb-key-radius": "20", "--sdkb-glow": "0 3px 8px rgba(180,120,150,0.28), inset 0 1px 0 rgba(255,255,255,0.7)", "--sdkb-fn-bg": "#ffc9de", "--sdkb-fn-text": "#7d7a85", "--sdkb-glyph-color": "#8a8790", "--sdkb-glyph-filter": "brightness(0) saturate(100%) invert(58%) sepia(6%) saturate(250%) hue-rotate(230deg) brightness(94%) contrast(85%)", "--sdkb-util-bg": "#ffc9de", "--sdkb-util-text": "#8a8790", "--sdkb-press-bg": "#ffd4e6", "--sdkb-press-text": "#7d7a85", "--sdkb-press-shadow": "inset 0 2px 5px rgba(170,110,140,0.38)", "--sdkb-ripple": "rgba(255,255,255,0.4)", "--sdkb-spacebar-bg": "#ffeef5", "--sdkb-spacebar-text": "#8a8790"}, "One Dark Style": {"--sdkb-bg-color": "#1e2127", "--sdkb-key-bg": "#282c34", "--sdkb-key-bg-hover": "#303542", "--sdkb-key-bg-pressed": "#3b404c", "--sdkb-key-border-color": "#3b404c", "--sdkb-key-text-color": "#abb2bf", "--sdkb-key-text-secondary": "#5c6370", "--sdkb-accent": "#61afef", "--sdkb-accent-text": "#0b1015", "--sdkb-key-radius": "0", "--sdkb-glow": "0 0 transparent"}, "OLED Black": {"--sdkb-bg-color": "#000000", "--sdkb-key-bg": "#000000", "--sdkb-key-bg-hover": "#101015", "--sdkb-key-bg-pressed": "#101015", "--sdkb-key-border-color": "#2a2b30", "--sdkb-key-text-color": "#d0d0d0", "--sdkb-key-text-secondary": "#7f828a", "--sdkb-accent": "#00b8ff", "--sdkb-accent-text": "#000000", "--sdkb-key-radius": "6", "--sdkb-glow": "0 0 transparent"}, "Custom": {}};
+const FOCUS = "_21EoN2ZlmHNY3fjho_HMae", TOUCH = "_3UFQq1GinEyksceos-TETi";
+const sel = document.getElementById('preset');
+const pv  = document.getElementById('preset-vars');
+
+function applyPreset(name){
+  const p = PRESETS[name] || {};
+  let css = ':root{';
+  for (const k in p) css += k + ':' + p[k] + ';';
+  css += '}';
+  pv.textContent = css;
+}
+sel.addEventListener('change', () => applyPreset(sel.value));
+
+// state buttons operate on the "h" key
+const hKey = [...document.querySelectorAll('[class*="KeyTheme_h"]')][0];
+document.querySelectorAll('.states button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.states button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    if (!hKey) return;
+    hKey.classList.remove(FOCUS, TOUCH);
+    if (b.dataset.state === 'focus') hKey.classList.add(FOCUS);
+    if (b.dataset.state === 'press') hKey.classList.add(TOUCH);
+  });
+});
+
+// click any key -> toggle pressed
+document.querySelectorAll('.DefaultTheme [class*="KeyTheme_"]').forEach(k => {
+  k.addEventListener('click', () => k.classList.toggle(TOUCH));
+});
+
+// backdrop
+const wrap = document.getElementById('stageWrap');
+document.querySelectorAll('.backdrops button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.backdrops button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    wrap.className = b.dataset.bd;
+  });
+});
+
+// zoom
+const stage = document.querySelector('.kbd-stage');
+const zoom = document.getElementById('zoom');
+function applyZoom(){ stage.style.transform = 'scale(' + zoom.value + ')'; }
+zoom.addEventListener('change', applyZoom);
+
+applyPreset(sel.value);
+applyZoom();
+</script>
+</body>
+</html>
